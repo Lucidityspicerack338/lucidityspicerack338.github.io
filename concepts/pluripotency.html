@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pluripotency — Culture & Fate</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0a0f1a',
+              panel: '#111a2b',
+              'panel-2': '#161f33',
+              cell: '#5eead4',
+              'cell-soft': 'rgba(94, 234, 212, 0.35)',
+              fate: '#ff8a65',
+              text: '#edeff4',
+              muted: '#8b96a8',
+              line: 'rgba(255, 255, 255, 0.08)',
+            },
+            fontFamily: {
+              sans: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
+              serif: ['Georgia', 'serif'],
+              mono: ['"Courier New"', 'Courier', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Shared Brand Stylesheet -->
+    <link rel="stylesheet" href="../assets/style.css">
+  </head>
+  <body class="bg-[#0a0f1a] text-[#edeff4] selection:bg-cell/30 selection:text-cell min-h-screen flex flex-col">
+    
+    <!-- Header Navigation -->
+    <header class="glass-header fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a id="nav-logo" href="../index.html" class="flex items-center gap-2 group">
+          <span class="font-serif text-xl md:text-2xl font-semibold tracking-tight text-white group-hover:text-cell transition-colors">
+            Culture & Fate
+          </span>
+          <span class="w-2 h-2 rounded-full bg-cell animate-pulse shadow-[0_0_8px_#5eead4]"></span>
+        </a>
+        
+        <nav class="hidden md:flex items-center gap-8 font-mono text-sm tracking-wider">
+          <a id="nav-link-home" href="../index.html" class="text-muted hover:text-cell transition-colors py-2">HOME</a>
+          <a id="nav-link-concepts" href="../concepts.html" class="text-cell transition-colors py-2 border-b-2 border-cell">CONCEPTS</a>
+          <a id="nav-link-newsletter" href="../index.html#newsletter" class="text-muted hover:text-cell transition-colors py-2">NEWSLETTER</a>
+          <a id="nav-cta" href="../index.html#newsletter" class="btn-pill btn-pill-secondary py-2 px-5 text-xs">SUBSCRIBE</a>
+        </nav>
+
+        <button id="mobile-menu-toggle" class="md:hidden text-muted hover:text-cell p-2" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0a0f1a] z-40 flex-col justify-center items-center gap-8 font-mono text-lg tracking-widest hidden">
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-muted hover:text-cell p-2" aria-label="Close Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <a id="mobile-link-home" href="../index.html" class="text-muted hover:text-cell transition-colors">HOME</a>
+      <a id="mobile-link-concepts" href="../concepts.html" class="text-cell transition-colors">CONCEPTS</a>
+      <a id="mobile-link-newsletter" href="../index.html#newsletter" class="text-muted hover:text-cell transition-colors">NEWSLETTER</a>
+    </div>
+
+    <!-- MAIN SCROLLYTELLING VIEW -->
+    <main class="flex-grow">
+      
+      <!-- 1. FULL VIEWPORT HERO -->
+      <section id="concept-hero" class="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 svg-bg-grid opacity-30 pointer-events-none"></div>
+        <div class="absolute w-96 h-96 rounded-full glowing-orb opacity-15 pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10 mt-16">
+          <span class="font-mono text-xs tracking-[0.25em] text-cell bg-cell/5 border border-cell/15 px-4 py-1.5 rounded-full uppercase">
+            CONCEPT 01 · DEVELOPMENTAL BIOLOGY
+          </span>
+          <h1 class="text-5xl md:text-7xl text-white font-normal leading-tight">
+            Pluripotency
+          </h1>
+          <p class="text-xl md:text-2xl font-serif italic text-fate">
+            "One cell. Every possible fate."
+          </p>
+          <p class="text-muted text-base md:text-lg max-w-xl mx-auto leading-relaxed font-sans">
+            How does a single cell navigate the decisions that restrict its future? Start scrolling to watch the cell descend the valleys of commitment.
+          </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 flex flex-col items-center gap-2 pointer-events-none">
+          <span class="font-mono text-[9px] tracking-widest text-muted">SCROLL TO DESCENT</span>
+          <div class="w-1 h-8 rounded-full bg-line relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-cell rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SCROLL-PINNED SECTION (350vh height for clean progressive scrolling) -->
+      <section id="scrolly-trigger" class="relative h-[350vh] bg-[#070b13]">
+        <div class="scrolly-sticky">
+          <!-- Background Grid lines inside Scrollytelling Stage -->
+          <div class="absolute inset-0 svg-bg-grid opacity-20"></div>
+          
+          <div class="w-full max-w-5xl mx-auto px-6 relative flex flex-col lg:flex-row items-center justify-between gap-12 h-full py-24">
+            
+            <!-- Left Side: Interactive SVG Canvas -->
+            <div class="w-full lg:w-3/5 h-[40vh] lg:h-[60vh] flex items-center justify-center relative bg-panel/30 border border-line rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
+              <svg id="waddington-svg" class="w-full h-full" viewBox="0 0 600 400" fill="none" preserveAspectRatio="xMidYMid meet">
+                <!-- Epigenetic landscape lines (the valley contours) -->
+                <path d="M 100,200 Q 150,120 300,120 T 500,200" class="svg-landscape-line" stroke-opacity="0.2" />
+                <path d="M 50,300 Q 180,180 300,180 T 550,300" class="svg-landscape-line" stroke-opacity="0.1" />
+                
+                <!-- Descent valleys representation (Waddington's ridges) -->
+                <path d="M 300,50 L 300,110" class="svg-landscape-line" stroke-dasharray="2 4" />
+                <path d="M 300,110 L 180,210" class="svg-landscape-line" stroke-dasharray="2 4" />
+                <path d="M 300,110 L 420,210" class="svg-landscape-line" stroke-dasharray="2 4" />
+                
+                <!-- Main Motion Path for the Cell -->
+                <path id="cell-motion-path" d="M 300,50 C 300,120 180,150 180,220 C 180,280 250,290 250,360" class="svg-motion-path" />
+                <path id="cell-motion-path-active" d="M 300,50 C 300,120 180,150 180,220 C 180,280 250,290 250,360" class="svg-motion-path-active" stroke-dasharray="1000" stroke-dashoffset="1000" />
+                
+                <!-- Alternate lineage path silhouettes for background -->
+                <path d="M 300,110 C 300,170 420,180 420,250 C 420,300 480,310 480,360" stroke="rgba(255,255,255,0.05)" stroke-width="2" stroke-linecap="round" fill="none" />
+                <path d="M 180,220 C 180,280 100,290 100,360" stroke="rgba(255,255,255,0.05)" stroke-width="2" stroke-linecap="round" fill="none" />
+
+                <!-- Lineage Endpoints (Fates) -->
+                <!-- Neuron -->
+                <circle cx="100" cy="360" r="10" fill="var(--panel-2)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+                <text x="100" y="385" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono" font-size="9" tracking-wider>NEURON</text>
+
+                <!-- Skin Cell -->
+                <circle cx="250" cy="360" r="10" fill="var(--panel-2)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" id="skin-target" />
+                <text x="250" y="385" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono" font-size="9" tracking-wider>SKIN CELL</text>
+
+                <!-- Blood Cell -->
+                <circle cx="480" cy="360" r="10" fill="var(--panel-2)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+                <text x="480" y="385" text-anchor="middle" fill="var(--muted)" font-family="JetBrains Mono" font-size="9" tracking-wider>BLOOD CELL</text>
+
+                <!-- Peak stem cell label -->
+                <text x="300" y="30" text-anchor="middle" fill="var(--cell)" font-family="JetBrains Mono" font-size="10" tracking-widest class="font-medium">PLURIPOTENT STEM CELL</text>
+
+                <!-- Moving Cell Marker -->
+                <circle id="moving-cell" cx="300" cy="50" r="12" class="svg-cell-marker" />
+                <circle id="moving-cell-glow" cx="300" cy="50" r="20" fill="var(--cell)" fill-opacity="0.15" class="animate-pulse pointer-events-none" />
+              </svg>
+              
+              <!-- Floating landscape coordinates -->
+              <div class="absolute bottom-4 left-4 font-mono text-[9px] text-muted bg-[#0a0f1a]/80 px-2 py-1 border border-line rounded">
+                METAPHOR: DEVELOPMENTAL CANYONS
+              </div>
+            </div>
+
+            <!-- Right Side: Progressive Scrolly Explanations (Fading in/out) -->
+            <div class="w-full lg:w-2/5 flex flex-col justify-center h-[35vh] lg:h-[60vh] relative">
+              
+              <!-- Caption 1: Peak -->
+              <div id="caption-1" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-cell uppercase tracking-wider block mb-2 font-medium">Stage I · Undifferentiated Peak</span>
+                <h4 class="text-xl text-white font-medium mb-2">The Summit of Potential</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  At the beginning of life, the pluripotent cell sits at the top of the developmental hill. It possesses maximum cellular plasticity—it is uncommitted, unspecialized, and capable of dividing into any of the body's somatic lineages.
+                </p>
+              </div>
+
+              <!-- Caption 2: Neuron (Ectoderm) -->
+              <div id="caption-2" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-cell uppercase tracking-wider block mb-2 font-medium">Stage II · Neural Commitment</span>
+                <h4 class="text-xl text-white font-medium mb-2">Neuron (Ectoderm)</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  As the cell rolls down the valley, signaling cascades restrict its fate. Branching toward the ectoderm lineage, the cell narrows its capabilities, eventually expressing genes specific to neural filaments.
+                </p>
+              </div>
+
+              <!-- Caption 3: Skin Cell (Ectoderm) -->
+              <div id="caption-3" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-cell uppercase tracking-wider block mb-2 font-medium">Stage III · Dermal Branching</span>
+                <h4 class="text-xl text-white font-medium mb-2">Skin Cell (Ectoderm)</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  Alternatively, in the same ectodermal canyon, local signals might lock the cell into becoming a protective squamous epithelial cell. Once committed to the epidermal layer, the decision was historically considered final.
+                </p>
+              </div>
+
+              <!-- Caption 4: Blood Cell (Mesoderm) -->
+              <div id="caption-4" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-fate uppercase tracking-wider block mb-2 font-medium">Stage IV · Mesoderm Canyons</span>
+                <h4 class="text-xl text-white font-medium mb-2">Blood Cell (Mesoderm)</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  In a separate canyon system altogether, cells commit to the mesodermal tract. Here, hematopoietic stem cells constantly cycle, narrowing their lineage until they are committed strictly to carrying oxygen in red blood cells.
+                </p>
+              </div>
+
+              <!-- Caption 5: Muscle Cell (Mesoderm) -->
+              <div id="caption-5" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-fate uppercase tracking-wider block mb-2 font-medium">Stage V · Terminal Specialization</span>
+                <h4 class="text-xl text-white font-medium mb-2">Muscle Cell (Mesoderm)</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  Finally, sliding into the deepest valley, cells form multinucleated skeletal muscle fibers. Here, developmental potential is entirely zero—the cell is locked permanently into its specialized mechanical role.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. FOLLOW-UP SECTION 1: THE EPIGENETIC LANDSCAPE EXPLAINED -->
+      <section id="landscape-explanation" class="py-24 px-6 border-t border-line bg-gradient-to-b from-[#070b13] to-[#0a0f1a] relative">
+        <div class="max-w-4xl mx-auto space-y-8">
+          <div class="space-y-3">
+            <span class="font-mono text-xs text-cell uppercase tracking-wider block font-semibold">THE CLASSIC METAPHOR</span>
+            <h2 class="text-3xl md:text-5xl text-white font-normal">Waddington's Epigenetic Landscape</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-muted text-base leading-relaxed">
+            <p>
+              In 1957, developmental biologist **C.H. Waddington** proposed a visual metaphor to explain how cells restrict their identity during development. He imagined a marble rolling down a highly contoured surface, carved with branching ridges and valleys. 
+            </p>
+            <p>
+              In this system, **height represents developmental potential**, and the **valleys represent committed lineages**. As the cell rolls downward under the force of time, it makes irrevocable choices at each bifurcation, sliding deeper into specific canyons until it achieves its final, irreversible somatic fate.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. FOLLOW-UP SECTION 2: YAMANAKA'S REVOLUTION (Pushing back up the hill) -->
+      <section id="yamanaka-factors" class="py-24 px-6 border-t border-line bg-[#111a2b]/30 relative overflow-hidden">
+        <div class="absolute w-[500px] h-[500px] rounded-full glowing-orb-fate opacity-10 -right-40 -bottom-40 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto space-y-8 relative z-10">
+          <div class="space-y-3">
+            <span class="font-mono text-xs text-fate uppercase tracking-wider block font-semibold">THE REVERSAL</span>
+            <h2 class="text-3xl md:text-5xl text-white font-normal">Climbing Back Up</h2>
+          </div>
+          
+          <p class="text-muted text-lg leading-relaxed max-w-3xl">
+            For nearly half a century, Waddington's landscape was accepted as a one-way street. Once a cell rolled down into muscle, skin, or blood, it could never return to the pluripotent peak.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-[#111a2b] border border-line rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.4)]">
+            <div class="md:col-span-7 space-y-4">
+              <h3 class="text-2xl text-white font-medium">The Yamanaka Breakthrough (2006)</h3>
+              <p class="text-muted text-sm leading-relaxed">
+                Shinya Yamanaka and his team discovered that mature somatic cells could be chemically reprogrammed. By introducing a cocktail of just **four specific transcription factors**, they forced specialized adult cells to overwrite their epigenetic memory, pushing them all the way back up Waddington's hills into **Induced Pluripotent Stem Cells (iPSCs)**.
+              </p>
+            </div>
+            
+            <div class="md:col-span-5 flex flex-wrap gap-2.5 justify-center md:justify-end">
+              <span class="font-mono text-xs text-fate bg-fate/5 border border-fate/20 px-3.5 py-2 rounded-full font-bold">OCT4</span>
+              <span class="font-mono text-xs text-fate bg-fate/5 border border-fate/20 px-3.5 py-2 rounded-full font-bold">SOX2</span>
+              <span class="font-mono text-xs text-fate bg-fate/5 border border-fate/20 px-3.5 py-2 rounded-full font-bold">KLF4</span>
+              <span class="font-mono text-xs text-fate bg-fate/5 border border-fate/20 px-3.5 py-2 rounded-full font-bold">MYC</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. CLOSING CITATIONS & CTA -->
+      <section id="citations-and-cta" class="py-24 px-6 border-t border-line bg-[#0a0f1a] relative">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+          
+          <!-- Citation Block -->
+          <div class="border-t border-b border-line py-8 max-w-2xl mx-auto space-y-4">
+            <span class="font-mono text-[10px] text-muted tracking-widest block uppercase font-semibold">SELECTED CITATIONS</span>
+            <ul class="space-y-2 font-mono text-xs text-muted leading-relaxed">
+              <li>
+                <span class="text-white">C.H. Waddington</span>, "The Strategy of the Genes," Allen & Unwin, 1957. (Introduction of epigenetic landscape model)
+              </li>
+              <li>
+                <span class="text-white">Takahashi, K. & Yamanaka, S.</span>, "Induction of Pluripotent Stem Cells from Mouse Embryonic and Adult Fibroblast Cultures by Defined Factors," <span class="italic">Cell</span>, 2006. (Discovery of iPSCs)
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h3 class="text-2xl text-white font-normal font-serif italic">Want deeper, paper-level cell-fate digests?</h3>
+            <p class="text-muted text-sm max-w-md mx-auto">
+              Our newsletter unpacks recent research in stem-cell lineages, somatic reprogramming, and food engineering with absolute molecular clarity.
+            </p>
+            <div class="pt-4">
+              <a href="../index.html#newsletter" class="btn-pill btn-pill-primary">
+                Subscribe to the Newsletter
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a0f1a] border-t border-line py-16 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-serif text-lg font-semibold tracking-tight text-white">Culture & Fate</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cell shadow-[0_0_8px_#5eead4]"></span>
+          </div>
+          <p class="text-muted text-sm leading-relaxed max-w-sm">
+            An independent educational companion and newsletter bringing rigorous, plain-language clarity to stem cell developmental biology and molecular food-culture science.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs tracking-wider text-cell uppercase font-semibold">EXPLORE</h4>
+          <ul class="space-y-2 text-sm font-mono text-muted">
+            <li><a href="../index.html" class="hover:text-cell transition-colors">Homepage</a></li>
+            <li><a href="../concepts.html" class="hover:text-cell transition-colors">Concept Library</a></li>
+            <li><a href="./pluripotency.html" class="hover:text-cell transition-colors">Pluripotency</a></li>
+            <li><a href="./transcription.html" class="hover:text-cell transition-colors">Transcription</a></li>
+            <li><a href="./fermentation.html" class="hover:text-cell transition-colors">Fermentation</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs tracking-wider text-cell uppercase font-semibold">ELSEWHERE</h4>
+          <ul class="space-y-2 text-sm font-mono text-muted">
+            <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">X / Twitter</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">LinkedIn</a></li>
+            <li><a href="https://threads.net" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">Threads</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto border-t border-line mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="font-mono text-[10px] text-muted">
+          &copy; 2026 Culture & Fate. All rights reserved.
+        </span>
+        <span class="font-mono text-[10px] text-muted italic">
+          Deciphering the blueprints of growth and preservation.
+        </span>
+      </div>
+    </footer>
+
+    <!-- GSAP / ScrollTrigger Engine Implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      // Register GSAP plugins
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Mobile Nav Toggle
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileClose = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const closeMobile = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+
+      mobileClose.addEventListener('click', closeMobile);
+
+      // Helper for windowed opacity
+      function getWindowedOpacity(progress, start, peakStart, peakEnd, end) {
+        if (progress < start || progress > end) return 0;
+        if (progress >= peakStart && progress <= peakEnd) return 1;
+        if (progress < peakStart) {
+          return (progress - start) / (peakStart - start);
+        } else {
+          return (end - progress) / (end - peakEnd);
+        }
+      }
+
+      // Check prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        // Scrollytelling Animation
+        const path = document.getElementById('cell-motion-path');
+        const activePath = document.getElementById('cell-motion-path-active');
+        const marker = document.getElementById('moving-cell');
+        const markerGlow = document.getElementById('moving-cell-glow');
+        const pathLength = path.getTotalLength();
+
+        // Initialize active path dashes
+        activePath.style.strokeDasharray = pathLength;
+        activePath.style.strokeDashoffset = pathLength;
+
+        // Caption elements
+        const captions = [
+          { element: document.getElementById('caption-1'), range: [0.0, 0.05, 0.15, 0.22] },
+          { element: document.getElementById('caption-2'), range: [0.22, 0.27, 0.38, 0.44] },
+          { element: document.getElementById('caption-3'), range: [0.44, 0.49, 0.58, 0.65] },
+          { element: document.getElementById('caption-4'), range: [0.65, 0.70, 0.78, 0.85] },
+          { element: document.getElementById('caption-5'), range: [0.85, 0.90, 0.96, 1.0] },
+        ];
+
+        // GSAP ScrollTrigger to coordinate ball rolling down
+        ScrollTrigger.create({
+          trigger: "#scrolly-trigger",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.5,
+          onUpdate: (self) => {
+            const progress = self.progress;
+
+            // Update Active Path outline
+            const drawLength = pathLength * progress;
+            activePath.style.strokeDashoffset = pathLength - drawLength;
+
+            // Get point along SVG path for the ball position
+            const point = path.getPointAtLength(progress * pathLength);
+            
+            // Move marker ball
+            marker.setAttribute('cx', point.x);
+            marker.setAttribute('cy', point.y);
+            markerGlow.setAttribute('cx', point.x);
+            markerGlow.setAttribute('cy', point.y);
+
+            // Change marker ball color based on fate commitment
+            if (progress > 0.6) {
+              marker.classList.add('fate-changed');
+            } else {
+              marker.classList.remove('fate-changed');
+            }
+
+            // Windowed Opacity for Captions
+            captions.forEach(cap => {
+              const op = getWindowedOpacity(progress, cap.range[0], cap.range[1], cap.range[2], cap.range[3]);
+              cap.element.style.opacity = op;
+              cap.element.style.transform = `translateY(${(1 - op) * 15}px)`;
+              if (op > 0.1) {
+                cap.element.classList.add('active');
+              } else {
+                cap.element.classList.remove('active');
+              }
+            });
+          }
+        });
+      } else {
+        // Fallback for prefers-reduced-motion: display all labels statically or with simplified layout
+        const captions = document.querySelectorAll('.caption-fade-box');
+        captions.forEach((cap, i) => {
+          cap.style.position = 'relative';
+          cap.style.opacity = '1';
+          cap.style.transform = 'none';
+          cap.classList.add('active');
+        });
+        
+        // Hide scroll-pinned spacer height, keep standard view
+        const triggerSec = document.getElementById('scrolly-trigger');
+        triggerSec.style.height = 'auto';
+        const stickySec = document.querySelector('.scrolly-sticky');
+        stickySec.style.position = 'relative';
+        stickySec.style.height = 'auto';
+      }
+    </script>
+  </body>
+</html>

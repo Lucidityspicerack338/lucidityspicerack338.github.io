@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transcription — Culture & Fate</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0a0f1a',
+              panel: '#111a2b',
+              'panel-2': '#161f33',
+              cell: '#5eead4',
+              'cell-soft': 'rgba(94, 234, 212, 0.35)',
+              fate: '#ff8a65',
+              text: '#edeff4',
+              muted: '#8b96a8',
+              line: 'rgba(255, 255, 255, 0.08)',
+            },
+            fontFamily: {
+              sans: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
+              serif: ['Georgia', 'serif'],
+              mono: ['"Courier New"', 'Courier', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Shared Brand Stylesheet -->
+    <link rel="stylesheet" href="../assets/style.css">
+  </head>
+  <body class="bg-[#0a0f1a] text-[#edeff4] selection:bg-cell/30 selection:text-cell min-h-screen flex flex-col">
+    
+    <!-- Header Navigation -->
+    <header class="glass-header fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a id="nav-logo" href="../index.html" class="flex items-center gap-2 group">
+          <span class="font-serif text-xl md:text-2xl font-semibold tracking-tight text-white group-hover:text-cell transition-colors">
+            Culture & Fate
+          </span>
+          <span class="w-2 h-2 rounded-full bg-cell animate-pulse shadow-[0_0_8px_#5eead4]"></span>
+        </a>
+        
+        <nav class="hidden md:flex items-center gap-8 font-mono text-sm tracking-wider">
+          <a id="nav-link-home" href="../index.html" class="text-muted hover:text-cell transition-colors py-2">HOME</a>
+          <a id="nav-link-concepts" href="../concepts.html" class="text-cell transition-colors py-2 border-b-2 border-cell">CONCEPTS</a>
+          <a id="nav-link-newsletter" href="../index.html#newsletter" class="text-muted hover:text-cell transition-colors py-2">NEWSLETTER</a>
+          <a id="nav-cta" href="../index.html#newsletter" class="btn-pill btn-pill-secondary py-2 px-5 text-xs">SUBSCRIBE</a>
+        </nav>
+
+        <button id="mobile-menu-toggle" class="md:hidden text-muted hover:text-cell p-2" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0a0f1a] z-40 flex-col justify-center items-center gap-8 font-mono text-lg tracking-widest hidden">
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-muted hover:text-cell p-2" aria-label="Close Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <a id="mobile-link-home" href="../index.html" class="text-muted hover:text-cell transition-colors">HOME</a>
+      <a id="mobile-link-concepts" href="../concepts.html" class="text-cell transition-colors">CONCEPTS</a>
+      <a id="mobile-link-newsletter" href="../index.html#newsletter" class="text-muted hover:text-cell transition-colors">NEWSLETTER</a>
+    </div>
+
+    <!-- MAIN SCROLLYTELLING VIEW -->
+    <main class="flex-grow">
+      
+      <!-- 1. FULL VIEWPORT HERO -->
+      <section id="concept-hero" class="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 svg-bg-grid opacity-30 pointer-events-none"></div>
+        <div class="absolute w-96 h-96 rounded-full glowing-orb opacity-15 pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10 mt-16">
+          <span class="font-mono text-xs tracking-[0.25em] text-cell bg-cell/5 border border-cell/15 px-4 py-1.5 rounded-full uppercase">
+            CONCEPT 02 · MOLECULAR GENETICS
+          </span>
+          <h1 class="text-5xl md:text-7xl text-white font-normal leading-tight">
+            Transcription
+          </h1>
+          <p class="text-xl md:text-2xl font-serif italic text-fate">
+            "Reading the master template."
+          </p>
+          <p class="text-muted text-base md:text-lg max-w-xl mx-auto leading-relaxed font-sans">
+            How does the cell open the secure vaults of DNA to copy its instructions? Scroll to watch RNA polymerase bind, slide, and assemble a temporary mRNA messenger molecule.
+          </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 flex flex-col items-center gap-2 pointer-events-none">
+          <span class="font-mono text-[9px] tracking-widest text-muted">SCROLL TO TRANSCRIBE</span>
+          <div class="w-1 h-8 rounded-full bg-line relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-cell rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SCROLL-PINNED SECTION (350vh height for progressive scrolling) -->
+      <section id="scrolly-trigger" class="relative h-[350vh] bg-[#070b13]">
+        <div class="scrolly-sticky">
+          <!-- Background Grid lines -->
+          <div class="absolute inset-0 svg-bg-grid opacity-20"></div>
+          
+          <div class="w-full max-w-5xl mx-auto px-6 relative flex flex-col lg:flex-row items-center justify-between gap-12 h-full py-24">
+            
+            <!-- Left Side: Interactive SVG Canvas -->
+            <div class="w-full lg:w-3/5 h-[40vh] lg:h-[60vh] flex items-center justify-center relative bg-panel/30 border border-line rounded-2xl p-6 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
+              <svg id="transcription-svg" class="w-full h-full" viewBox="0 0 600 400" fill="none" preserveAspectRatio="xMidYMid meet">
+                <!-- Base DNA Double Helix (Top Strand) -->
+                <path d="M 50,140 Q 150,140 200,140 T 350,100 T 500,140" class="svg-landscape-line" stroke-opacity="0.3" stroke-width="2" />
+                <!-- Base DNA Double Helix (Bottom Strand) -->
+                <path d="M 50,260 Q 150,260 200,260 T 350,300 T 500,260" class="svg-landscape-line" stroke-opacity="0.3" stroke-width="2" />
+
+                <!-- Transcription Bubble (Active opening in DNA) -->
+                <path d="M 200,140 C 250,140 270,80 350,80 C 430,80 450,140 500,140" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none" />
+                <path d="M 200,260 C 250,260 270,320 350,320 C 430,320 450,260 500,260" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none" />
+                
+                <!-- Polymerase Motion Path (Active path of transcription enzyme) -->
+                <path id="polymerase-path" d="M 120,200 C 200,200 240,200 310,200 C 380,200 420,200 500,200" class="svg-motion-path" />
+                <path id="polymerase-path-active" d="M 120,200 C 200,200 240,200 310,200 C 380,200 420,200 500,200" class="svg-motion-path-active" stroke-dasharray="1000" stroke-dashoffset="1000" />
+                
+                <!-- Nascent mRNA Transcript (Single Strand being synthesized) -->
+                <path id="mrna-transcript" d="M 220,320 C 260,260 280,210 310,200" stroke="var(--fate)" stroke-width="3" stroke-linecap="round" fill="none" />
+
+                <!-- Moving RNA Polymerase (Large complex sphere) -->
+                <circle id="polymerase-complex" cx="120" cy="200" r="30" fill="rgba(94, 234, 212, 0.08)" stroke="var(--cell)" stroke-width="1.5" stroke-dasharray="4 2" />
+                <circle id="polymerase-center" cx="120" cy="200" r="10" class="svg-cell-marker" />
+                <circle id="polymerase-glow" cx="120" cy="200" r="18" fill="var(--cell)" fill-opacity="0.15" class="animate-pulse" />
+                
+                <!-- Nucleotides Floating and entering -->
+                <circle cx="180" cy="90" r="4" fill="var(--cell)" opacity="0.6" />
+                <line x1="180" y1="90" x2="200" y2="120" stroke="var(--cell)" stroke-opacity="0.2" />
+                <circle cx="340" cy="280" r="4" fill="var(--fate)" opacity="0.6" />
+                <line x1="340" y1="280" x2="310" y2="200" stroke="var(--fate)" stroke-opacity="0.2" />
+                
+                <!-- DNA Base bars (Hydrogen bonds) -->
+                <line x1="80" y1="140" x2="80" y2="260" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+                <line x1="130" y1="140" x2="130" y2="260" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+                <line x1="470" y1="140" x2="470" y2="260" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+
+                <text x="310" y="240" text-anchor="middle" fill="var(--fate)" font-family="JetBrains Mono" font-size="9" tracking-wider>mRNA STRAND</text>
+              </svg>
+              
+              <!-- Coordinates -->
+              <div class="absolute bottom-4 left-4 font-mono text-[9px] text-muted bg-[#0a0f1a]/80 px-2 py-1 border border-line rounded">
+                METAPHOR: POLYMERASE ALIGNMENT
+              </div>
+            </div>
+
+            <!-- Right Side: Progressive Scrolly Explanations -->
+            <div class="w-full lg:w-2/5 flex flex-col justify-center h-[35vh] lg:h-[60vh] relative">
+              
+              <!-- Caption 1 -->
+              <div id="caption-1" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-cell uppercase tracking-wider block mb-2 font-medium">Stage I · Promoter Recognition</span>
+                <h4 class="text-xl text-white font-medium mb-2">Initiation Cascade</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  The process begins when RNA Polymerase scans the DNA sequence, seeking a distinct sequence known as a promoter. Once located, the enzyme latches onto the double-stranded DNA template.
+                </p>
+              </div>
+
+              <!-- Caption 2 -->
+              <div id="caption-2" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-cell uppercase tracking-wider block mb-2 font-medium">Stage II · Unwinding the Helix</span>
+                <h4 class="text-xl text-white font-medium mb-2">The Unzipping Bubble</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  To read the code, the polymerase must physically separate the hydrogen-bonded base pairs. It uncoils a short segment of the DNA, creating a localized transcription bubble.
+                </p>
+              </div>
+
+              <!-- Caption 3 -->
+              <div id="caption-3" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-fate uppercase tracking-wider block mb-2 font-medium">Stage III · Polymerization</span>
+                <h4 class="text-xl text-white font-medium mb-2">Elongation & Assembly</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  Using one DNA strand as a template, the polymerase threads matching ribonucleotides from the nucleoplasm, forging covalent bonds to form a single, complementary messenger RNA (mRNA) strand.
+                </p>
+              </div>
+
+              <!-- Caption 4 -->
+              <div id="caption-4" class="caption-fade-box absolute w-full max-w-md">
+                <span class="font-mono text-[10px] text-fate uppercase tracking-wider block mb-2 font-medium">Stage IV · Transcript Release</span>
+                <h4 class="text-xl text-white font-medium mb-2">Termination</h4>
+                <p class="text-muted text-sm leading-relaxed">
+                  Upon reaching a genetic terminator signal, the polymerase complex releases both the finished mRNA transcript and the double-helix, which instantly zips back together.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. FOLLOW-UP SECTION -->
+      <section id="mechanism-explanation" class="py-24 px-6 border-t border-line bg-gradient-to-b from-[#070b13] to-[#0a0f1a] relative">
+        <div class="max-w-4xl mx-auto space-y-8">
+          <div class="space-y-3">
+            <span class="font-mono text-xs text-cell uppercase tracking-wider block font-semibold">THE MOLECULAR MACHINERY</span>
+            <h2 class="text-3xl md:text-5xl text-white font-normal">RNA Polymerase II</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-muted text-base leading-relaxed">
+            <p>
+              RNA Polymerase II is the primary molecular copying machine in eukaryotic cells. It handles the critical duty of synthesizing messenger RNAs (mRNAs) from protein-coding genes. Acting as a master architect, it unzips DNA, stabilizes loose nucleotides, verifies complementary pairings, and links them at speeds averaging 40-50 nucleotides per second.
+            </p>
+            <p>
+              This process of transcription is the first absolute prerequisite of life. Without this sequence copy, genetic codes would remain permanently locked inside the nuclear vault, unable to interact with the ribosome to build proteins.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. CLOSING CITATIONS & CTA -->
+      <section id="citations-and-cta" class="py-24 px-6 border-t border-line bg-[#0a0f1a] relative">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+          
+          <!-- Citation Block -->
+          <div class="border-t border-b border-line py-8 max-w-2xl mx-auto space-y-4">
+            <span class="font-mono text-[10px] text-muted tracking-widest block uppercase font-semibold">SELECTED CITATIONS</span>
+            <ul class="space-y-2 font-mono text-xs text-muted leading-relaxed">
+              <li>
+                <span class="text-white">Watson, J.D. & Crick, F.H.C.</span>, "Molecular Structure of Nucleic Acids," <span class="italic">Nature</span>, 1953. (Structural double helix framework)
+              </li>
+              <li>
+                <span class="text-white">Kornberg, R.D.</span>, "The molecular basis of eukaryotic transcription," <span class="italic">Nobel Lecture</span>, 2006. (Resolution of RNA Polymerase structures)
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h3 class="text-2xl text-white font-normal font-serif italic">Curious how the transcript becomes physical?</h3>
+            <p class="text-muted text-sm max-w-md mx-auto">
+              Follow the molecular sequence. Explore our companion interactive visualization showing how mRNA transcripts are decoded into structural amino acids.
+            </p>
+            <div class="pt-4 flex justify-center gap-4">
+              <a href="./translation.html" class="btn-pill btn-pill-primary">
+                Explore Translation
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a0f1a] border-t border-line py-16 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-serif text-lg font-semibold tracking-tight text-white">Culture & Fate</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cell shadow-[0_0_8px_#5eead4]"></span>
+          </div>
+          <p class="text-muted text-sm leading-relaxed max-w-sm">
+            An independent educational companion and newsletter bringing rigorous, plain-language clarity to stem cell developmental biology and molecular food-culture science.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs tracking-wider text-cell uppercase font-semibold">EXPLORE</h4>
+          <ul class="space-y-2 text-sm font-mono text-muted">
+            <li><a href="../index.html" class="hover:text-cell transition-colors">Homepage</a></li>
+            <li><a href="../concepts.html" class="hover:text-cell transition-colors">Concept Library</a></li>
+            <li><a href="./pluripotency.html" class="hover:text-cell transition-colors">Pluripotency</a></li>
+            <li><a href="./transcription.html" class="hover:text-cell transition-colors">Transcription</a></li>
+            <li><a href="./fermentation.html" class="hover:text-cell transition-colors">Fermentation</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs tracking-wider text-cell uppercase font-semibold">ELSEWHERE</h4>
+          <ul class="space-y-2 text-sm font-mono text-muted">
+            <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">X / Twitter</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">LinkedIn</a></li>
+            <li><a href="https://threads.net" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">Threads</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto border-t border-line mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="font-mono text-[10px] text-muted">
+          &copy; 2026 Culture & Fate. All rights reserved.
+        </span>
+        <span class="font-mono text-[10px] text-muted italic">
+          Deciphering the blueprints of growth and preservation.
+        </span>
+      </div>
+    </footer>
+
+    <!-- GSAP / ScrollTrigger Engine Implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      // Register GSAP plugins
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Mobile Nav Toggle
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileClose = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const closeMobile = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+
+      mobileClose.addEventListener('click', closeMobile);
+
+      // Helper for windowed opacity
+      function getWindowedOpacity(progress, start, peakStart, peakEnd, end) {
+        if (progress < start || progress > end) return 0;
+        if (progress >= peakStart && progress <= peakEnd) return 1;
+        if (progress < peakStart) {
+          return (progress - start) / (peakStart - start);
+        } else {
+          return (end - progress) / (end - peakEnd);
+        }
+      }
+
+      // Check prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        // Scrollytelling Animation
+        const path = document.getElementById('polymerase-path');
+        const activePath = document.getElementById('polymerase-path-active');
+        const rnaPoly = document.getElementById('polymerase-center');
+        const rnaPolyComplex = document.getElementById('polymerase-complex');
+        const rnaPolyGlow = document.getElementById('polymerase-glow');
+        const mrna = document.getElementById('mrna-transcript');
+        const pathLength = path.getTotalLength();
+
+        // Initialize active path dashes
+        activePath.style.strokeDasharray = pathLength;
+        activePath.style.strokeDashoffset = pathLength;
+
+        // Caption elements
+        const captions = [
+          { element: document.getElementById('caption-1'), range: [0.0, 0.05, 0.18, 0.28] },
+          { element: document.getElementById('caption-2'), range: [0.28, 0.33, 0.48, 0.55] },
+          { element: document.getElementById('caption-3'), range: [0.55, 0.60, 0.78, 0.82] },
+          { element: document.getElementById('caption-4'), range: [0.82, 0.87, 0.96, 1.0] },
+        ];
+
+        // GSAP ScrollTrigger
+        ScrollTrigger.create({
+          trigger: "#scrolly-trigger",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.5,
+          onUpdate: (self) => {
+            const progress = self.progress;
+
+            // Update Active Path outline
+            const drawLength = pathLength * progress;
+            activePath.style.strokeDashoffset = pathLength - drawLength;
+
+            // Get point along path for position
+            const point = path.getPointAtLength(progress * pathLength);
+            
+            // Move Polymerase complex elements
+            rnaPoly.setAttribute('cx', point.x);
+            rnaPoly.setAttribute('cy', point.y);
+            rnaPolyComplex.setAttribute('cx', point.x);
+            rnaPolyComplex.setAttribute('cy', point.y);
+            rnaPolyGlow.setAttribute('cx', point.x);
+            rnaPolyGlow.setAttribute('cy', point.y);
+
+            // Dynamic mRNA transcript synthesis animation (grows behind polymerase)
+            // Draw transcript from start point bending down as transcription progresses
+            const mrnaStartPoint = { x: 220, y: 320 };
+            mrna.setAttribute('d', `M ${mrnaStartPoint.x},${mrnaStartPoint.y} Q ${mrnaStartPoint.x + (point.x - mrnaStartPoint.x)*0.5},${mrnaStartPoint.y - 40} ${point.x},${point.y}`);
+
+            // Windowed Opacity for Captions
+            captions.forEach(cap => {
+              const op = getWindowedOpacity(progress, cap.range[0], cap.range[1], cap.range[2], cap.range[3]);
+              cap.element.style.opacity = op;
+              cap.element.style.transform = `translateY(${(1 - op) * 15}px)`;
+              if (op > 0.1) {
+                cap.element.classList.add('active');
+              } else {
+                cap.element.classList.remove('active');
+              }
+            });
+          }
+        });
+      } else {
+        // Fallback for prefers-reduced-motion
+        const captions = document.querySelectorAll('.caption-fade-box');
+        captions.forEach((cap) => {
+          cap.style.position = 'relative';
+          cap.style.opacity = '1';
+          cap.style.transform = 'none';
+          cap.classList.add('active');
+        });
+        
+        const triggerSec = document.getElementById('scrolly-trigger');
+        triggerSec.style.height = 'auto';
+        const stickySec = document.querySelector('.scrolly-sticky');
+        stickySec.style.position = 'relative';
+        stickySec.style.height = 'auto';
+      }
+    </script>
+  </body>
+</html>

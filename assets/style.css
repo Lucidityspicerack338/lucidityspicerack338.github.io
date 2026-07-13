@@ -1,0 +1,263 @@
+/* 
+ * Culture & Fate - Brand Stylesheet
+ * A lab-at-night design system for biotech/food-science education.
+ */
+
+:root {
+  --ink: #0a0f1a;
+  --panel: #111a2b;
+  --panel-2: #161f33;
+  --cell: #5eead4;
+  --cell-soft: rgba(94, 234, 212, 0.35);
+  --fate: #ff8a65;
+  --text: #edeff4;
+  --muted: #8b96a8;
+  --line: rgba(255, 255, 255, 0.08);
+
+  --font-serif: 'Georgia', serif;
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+/* Base resets & custom scrollbar */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ink);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--panel-2);
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cell);
+}
+
+/* Custom Typography defaults */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.font-mono-util {
+  font-family: var(--font-mono);
+}
+
+/* Glowing cell/orb signature */
+.glowing-orb {
+  position: relative;
+  background: radial-gradient(circle, var(--cell) 0%, rgba(94, 234, 212, 0.2) 60%, rgba(0,0,0,0) 100%);
+  filter: drop-shadow(0 0 25px rgba(94, 234, 212, 0.6));
+  animation: floatPulse 6s ease-in-out infinite;
+}
+
+.glowing-orb-fate {
+  position: relative;
+  background: radial-gradient(circle, var(--fate) 0%, rgba(255, 138, 101, 0.2) 60%, rgba(0,0,0,0) 100%);
+  filter: drop-shadow(0 0 25px rgba(255, 138, 101, 0.6));
+  animation: floatPulseFate 6s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes floatPulseFate {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(8px) scale(1.04);
+    opacity: 1;
+  }
+}
+
+/* Card hover lift & border transit */
+.concept-card {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.concept-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cell);
+  box-shadow: 0 10px 40px rgba(94, 234, 212, 0.08);
+}
+
+.concept-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.concept-card.disabled:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Header glassmorphism */
+.glass-header {
+  background-color: rgba(10, 15, 26, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Interactive focus indicators */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--cell);
+  outline-offset: 4px;
+}
+
+/* Custom animations for scrollytelling */
+.scrolly-container {
+  position: relative;
+  width: 100%;
+}
+
+.scrolly-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Pill buttons */
+.btn-pill {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-pill-primary {
+  background-color: var(--cell);
+  color: var(--ink);
+}
+
+.btn-pill-primary:hover {
+  background-color: #4cdbc5;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px var(--cell-soft);
+}
+
+.btn-pill-secondary {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.btn-pill-secondary:hover {
+  border-color: var(--cell);
+  color: var(--cell);
+  background-color: rgba(94, 234, 212, 0.05);
+}
+
+/* Custom CSS helper for labels */
+.caption-fade-box {
+  background: rgba(17, 26, 43, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.caption-fade-box.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SVG graphics styling */
+.svg-bg-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.svg-motion-path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+.svg-motion-path-active {
+  fill: none;
+  stroke: var(--cell);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.svg-landscape-line {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 3;
+}
+
+.svg-cell-marker {
+  fill: var(--cell);
+  filter: drop-shadow(0 0 8px var(--cell));
+  transition: fill 0.3s ease;
+}
+
+.svg-cell-marker.fate-changed {
+  fill: var(--fate);
+  filter: drop-shadow(0 0 8px var(--fate));
+}
+
+/* Newsletter feedback toast styling */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--panel-2);
+  border: 1px solid var(--cell);
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  z-index: 1000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}

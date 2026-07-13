@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concept Library — Culture & Fate</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0a0f1a',
+              panel: '#111a2b',
+              'panel-2': '#161f33',
+              cell: '#5eead4',
+              'cell-soft': 'rgba(94, 234, 212, 0.35)',
+              fate: '#ff8a65',
+              text: '#edeff4',
+              muted: '#8b96a8',
+              line: 'rgba(255, 255, 255, 0.08)',
+            },
+            fontFamily: {
+              sans: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
+              serif: ['Georgia', 'serif'],
+              mono: ['"Courier New"', 'Courier', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Shared Brand Stylesheet -->
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body class="bg-[#0a0f1a] text-[#edeff4] selection:bg-cell/30 selection:text-cell min-h-screen flex flex-col">
+    
+    <!-- Header Navigation -->
+    <header class="glass-header fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a id="nav-logo" href="./index.html" class="flex items-center gap-2 group">
+          <span class="font-serif text-xl md:text-2xl font-semibold tracking-tight text-white group-hover:text-cell transition-colors">
+            Culture & Fate
+          </span>
+          <span class="w-2 h-2 rounded-full bg-cell animate-pulse shadow-[0_0_8px_#5eead4]"></span>
+        </a>
+        
+        <nav class="hidden md:flex items-center gap-8 font-mono text-sm tracking-wider">
+          <a id="nav-link-home" href="./index.html" class="text-muted hover:text-cell transition-colors py-2">HOME</a>
+          <a id="nav-link-concepts" href="./concepts.html" class="text-cell transition-colors py-2 border-b-2 border-cell">CONCEPTS</a>
+          <a id="nav-link-newsletter" href="./index.html#newsletter" class="text-muted hover:text-cell transition-colors py-2">NEWSLETTER</a>
+          <a id="nav-cta" href="./index.html#newsletter" class="btn-pill btn-pill-secondary py-2 px-5 text-xs">SUBSCRIBE</a>
+        </nav>
+
+        <!-- Mobile Nav Toggle Indicator -->
+        <button id="mobile-menu-toggle" class="md:hidden text-muted hover:text-cell p-2" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0a0f1a] z-40 flex-col justify-center items-center gap-8 font-mono text-lg tracking-widest hidden">
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-muted hover:text-cell p-2" aria-label="Close Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <a id="mobile-link-home" href="./index.html" class="text-muted hover:text-cell transition-colors">HOME</a>
+      <a id="mobile-link-concepts" href="./concepts.html" class="text-cell transition-colors">CONCEPTS</a>
+      <a id="mobile-link-newsletter" href="./index.html#newsletter" class="text-muted hover:text-cell transition-colors">NEWSLETTER</a>
+    </div>
+
+    <!-- Main Content wrapper -->
+    <main class="flex-grow pt-20">
+      
+      <!-- HERO TITLE -->
+      <section id="library-hero" class="relative py-20 px-6 overflow-hidden">
+        <div class="absolute inset-0 svg-bg-grid opacity-30 pointer-events-none"></div>
+        <div class="absolute w-[400px] h-[400px] rounded-full glowing-orb opacity-10 -right-20 -top-20 pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center space-y-4 relative z-10">
+          <span class="font-mono text-xs tracking-[0.2em] text-cell uppercase font-semibold">THE ARCHIVES</span>
+          <h1 class="text-4xl md:text-6xl text-white font-normal">Concept Library</h1>
+          <p class="text-muted text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Scroll-driven visualization modules mapping foundational principles in cellular development and culinary microbiology.
+          </p>
+        </div>
+      </section>
+
+      <!-- CONCEPT CARDS GRID -->
+      <section id="grid-section" class="py-12 px-6 pb-24">
+        <div class="max-w-7xl mx-auto">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. Pluripotency (LIVE) -->
+            <a id="card-pluripotency" href="./concepts/pluripotency.html" class="concept-card p-8 flex flex-col justify-between group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-cell bg-cell/5 border border-cell/20 px-2 py-0.5 rounded font-semibold uppercase tracking-wider">
+                    LIVE
+                  </span>
+                  <span class="font-mono text-xs text-muted/60">01</span>
+                </div>
+                <h3 class="text-2xl text-white font-medium group-hover:text-cell transition-colors">Pluripotency</h3>
+                <p class="text-muted text-sm leading-relaxed">
+                  One cell, every possible fate. Journey down Waddington's epigenetic landscape and explore developmental commitment.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs">
+                <span class="text-muted">STEM CELL BIOLOGY</span>
+                <span class="text-cell group-hover:translate-x-1 transition-transform">EXPLORE &rarr;</span>
+              </div>
+            </a>
+
+            <!-- 2. Transcription (LIVE) -->
+            <a id="card-transcription" href="./concepts/transcription.html" class="concept-card p-8 flex flex-col justify-between group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-cell bg-cell/5 border border-cell/20 px-2 py-0.5 rounded font-semibold uppercase tracking-wider">
+                    LIVE
+                  </span>
+                  <span class="font-mono text-xs text-muted/60">02</span>
+                </div>
+                <h3 class="text-2xl text-white font-medium group-hover:text-cell transition-colors">Transcription</h3>
+                <p class="text-muted text-sm leading-relaxed">
+                  The genetic blueprint decoded. Visualize DNA being unzipped and read into messenger RNA by the RNA polymerase.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs">
+                <span class="text-muted">MOLECULAR GENETICS</span>
+                <span class="text-cell group-hover:translate-x-1 transition-transform">EXPLORE &rarr;</span>
+              </div>
+            </a>
+
+            <!-- 3. Translation (LIVE) -->
+            <a id="card-translation" href="./concepts/translation.html" class="concept-card p-8 flex flex-col justify-between group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-cell bg-cell/5 border border-cell/20 px-2 py-0.5 rounded font-semibold uppercase tracking-wider">
+                    LIVE
+                  </span>
+                  <span class="font-mono text-xs text-muted/60">03</span>
+                </div>
+                <h3 class="text-2xl text-white font-medium group-hover:text-cell transition-colors">Translation</h3>
+                <p class="text-muted text-sm leading-relaxed">
+                  From code to physical form. Witness mRNA passing through the ribosome and linking amino acids into living proteins.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs">
+                <span class="text-muted">CELLULAR MECHANICS</span>
+                <span class="text-cell group-hover:translate-x-1 transition-transform">EXPLORE &rarr;</span>
+              </div>
+            </a>
+
+            <!-- 4. Blastema & Regeneration (LIVE) -->
+            <a id="card-blastema" href="./concepts/blastema.html" class="concept-card p-8 flex flex-col justify-between group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-cell bg-cell/5 border border-cell/20 px-2 py-0.5 rounded font-semibold uppercase tracking-wider">
+                    LIVE
+                  </span>
+                  <span class="font-mono text-xs text-muted/60">04</span>
+                </div>
+                <h3 class="text-2xl text-white font-medium group-hover:text-cell transition-colors">Blastema & Regeneration</h3>
+                <p class="text-muted text-sm leading-relaxed">
+                  Undoing the lock of differentiation. How a salamander regrows structured limbs by pooling plastic, unspecialized cells.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs">
+                <span class="text-muted">REGENERATIVE MEDICINE</span>
+                <span class="text-cell group-hover:translate-x-1 transition-transform">EXPLORE &rarr;</span>
+              </div>
+            </a>
+
+            <!-- 5. Fermentation (LIVE) -->
+            <a id="card-fermentation" href="./concepts/fermentation.html" class="concept-card p-8 flex flex-col justify-between group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-cell bg-cell/5 border border-cell/20 px-2 py-0.5 rounded font-semibold uppercase tracking-wider">
+                    LIVE
+                  </span>
+                  <span class="font-mono text-xs text-muted/60">05</span>
+                </div>
+                <h3 class="text-2xl text-white font-medium group-hover:text-cell transition-colors">Fermentation</h3>
+                <p class="text-muted text-sm leading-relaxed">
+                  Metabolic artistry under darkness. Watch microbes disassemble glucose into clean organic acids, gas, and flavor compounds.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs">
+                <span class="text-muted">FOOD SCIENCE</span>
+                <span class="text-cell group-hover:translate-x-1 transition-transform">EXPLORE &rarr;</span>
+              </div>
+            </a>
+
+            <!-- 6. Food Cultures & Microbiomes (LIVE) -->
+            <a id="card-food-cultures" href="./concepts/food-cultures.html" class="concept-card p-8 flex flex-col justify-between group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-cell bg-cell/5 border border-cell/20 px-2 py-0.5 rounded font-semibold uppercase tracking-wider">
+                    LIVE
+                  </span>
+                  <span class="font-mono text-xs text-muted/60">06</span>
+                </div>
+                <h3 class="text-2xl text-white font-medium group-hover:text-cell transition-colors">Food Cultures & Microbiomes</h3>
+                <p class="text-muted text-sm leading-relaxed">
+                  The dual meaning of culture. Mapping the intersection where kitchen fermentation vessels behave exactly like cell culture incubators.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs">
+                <span class="text-muted">MICROBIOLOGY</span>
+                <span class="text-cell group-hover:translate-x-1 transition-transform">EXPLORE &rarr;</span>
+              </div>
+            </a>
+
+            <!-- 7. Cellular Reprogramming (COMING SOON) -->
+            <div id="card-reprogramming" class="concept-card disabled p-8 flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-muted bg-[#161f33] border border-line px-2 py-0.5 rounded uppercase tracking-wider">
+                    COMING SOON
+                  </span>
+                  <span class="font-mono text-xs text-muted/40">07</span>
+                </div>
+                <h3 class="text-2xl text-muted/80 font-medium">Cellular Reprogramming</h3>
+                <p class="text-muted/50 text-sm leading-relaxed">
+                  Overriding cellular identity. Introducing core genes to force specialized mature tissues back into primary stem cell states.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs text-muted/40">
+                <span>DEVELOPMENTAL GENETICS</span>
+                <span>LOCKED</span>
+              </div>
+            </div>
+
+            <!-- 8. Differentiation (COMING SOON) -->
+            <div id="card-differentiation" class="concept-card disabled p-8 flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-muted bg-[#161f33] border border-line px-2 py-0.5 rounded uppercase tracking-wider">
+                    COMING SOON
+                  </span>
+                  <span class="font-mono text-xs text-muted/40">08</span>
+                </div>
+                <h3 class="text-2xl text-muted/80 font-medium">Differentiation</h3>
+                <p class="text-muted/50 text-sm leading-relaxed">
+                  The lock of tissue specialization. How localized signaling chemical gradients guide the irreversible lock of lineage choices.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs text-muted/40">
+                <span>SYSTEMS BIOLOGY</span>
+                <span>LOCKED</span>
+              </div>
+            </div>
+
+            <!-- 9. The Maillard Reaction (COMING SOON) -->
+            <div id="card-maillard" class="concept-card disabled p-8 flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[9px] text-muted bg-[#161f33] border border-line px-2 py-0.5 rounded uppercase tracking-wider">
+                    COMING SOON
+                  </span>
+                  <span class="font-mono text-xs text-muted/40">09</span>
+                </div>
+                <h3 class="text-2xl text-muted/80 font-medium">The Maillard Reaction</h3>
+                <p class="text-muted/50 text-sm leading-relaxed">
+                  The chemistry of savory heat. Exploring the intricate molecular cascade of non-enzymatic browning that creates color and flavor.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-line mt-6 flex items-center justify-between font-mono text-xs text-muted/40">
+                <span>CULINARY CHEMISTRY</span>
+                <span>LOCKED</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0a0f1a] border-t border-line py-16 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-serif text-lg font-semibold tracking-tight text-white">Culture & Fate</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cell shadow-[0_0_8px_#5eead4]"></span>
+          </div>
+          <p class="text-muted text-sm leading-relaxed max-w-sm">
+            An independent educational companion and newsletter bringing rigorous, plain-language clarity to stem cell developmental biology and molecular food-culture science.
+          </p>
+        </div>
+
+        <!-- Column 2: Explore Links -->
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs tracking-wider text-cell uppercase font-semibold">EXPLORE</h4>
+          <ul class="space-y-2 text-sm font-mono text-muted">
+            <li><a href="./index.html" class="hover:text-cell transition-colors">Homepage</a></li>
+            <li><a href="./concepts.html" class="hover:text-cell transition-colors">Concept Library</a></li>
+            <li><a href="./concepts/pluripotency.html" class="hover:text-cell transition-colors">Pluripotency</a></li>
+            <li><a href="./concepts/transcription.html" class="hover:text-cell transition-colors">Transcription</a></li>
+            <li><a href="./concepts/fermentation.html" class="hover:text-cell transition-colors">Fermentation</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Elsewhere Links -->
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="font-mono text-xs tracking-wider text-cell uppercase font-semibold">ELSEWHERE</h4>
+          <ul class="space-y-2 text-sm font-mono text-muted">
+            <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">X / Twitter</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">LinkedIn</a></li>
+            <li><a href="https://threads.net" target="_blank" rel="noopener noreferrer" class="hover:text-cell transition-colors">Threads</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="max-w-7xl mx-auto border-t border-line mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="font-mono text-[10px] text-muted">
+          &copy; 2026 Culture & Fate. All rights reserved.
+        </span>
+        <span class="font-mono text-[10px] text-muted italic">
+          Deciphering the blueprints of growth and preservation.
+        </span>
+      </div>
+    </footer>
+
+    <!-- Core Interactive JavaScript -->
+    <script>
+      // Mobile Nav Toggle
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileClose = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const closeMobile = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+
+      mobileClose.addEventListener('click', closeMobile);
+    </script>
+  </body>
+</html>
