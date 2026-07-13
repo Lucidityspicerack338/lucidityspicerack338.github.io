@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stemma — Stem cell &amp; developmental biology, explained</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .hero{
+    height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 24px;position:relative;
+  }
+  .hero .field{
+    position:absolute;inset:0;overflow:hidden;pointer-events:none;
+  }
+  .hero .cell-dot{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #d2fff6, var(--cell) 55%, transparent 80%);
+    opacity:0.5;filter:blur(1px);
+    animation:drift 12s ease-in-out infinite;
+  }
+  @keyframes drift{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-30px);}
+  }
+  .hero h1{font-size:clamp(3rem,8vw,6.4rem);margin:1.2rem 0 1rem;}
+  .hero p{max-width:560px;color:var(--muted);font-size:1.1rem;line-height:1.6;}
+  .hero .actions{display:flex;gap:14px;margin-top:2.2rem;flex-wrap:wrap;justify-content:center;}
+  .scroll-cue{
+    position:absolute;bottom:36px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    color:var(--muted);letter-spacing:0.1em;display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .scroll-cue .line{width:1px;height:36px;background:linear-gradient(var(--cell),transparent);animation:dropline 1.8s ease-in-out infinite;}
+  @keyframes dropline{0%{opacity:0.2;}50%{opacity:1;}100%{opacity:0.2;}}
+
+  /* --- what is stemma --- */
+  .about-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:960px;margin:3rem auto 0;text-align:left;
+  }
+  .about-grid div{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--panel);}
+  .about-grid .num{font-family:'JetBrains Mono',monospace;color:var(--cell);font-size:0.75rem;letter-spacing:0.08em;}
+  .about-grid h3{font-size:1.2rem;margin:0.6rem 0 0.5rem;}
+  .about-grid p{font-size:0.92rem;color:var(--muted);line-height:1.55;}
+
+  /* --- concept library --- */
+  .library{background:var(--panel-2);padding:120px 24px;}
+  .library-head{max-width:640px;margin:0 auto 3.5rem;text-align:center;}
+  .concept-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;max-width:1040px;margin:0 auto;
+  }
+  .concept-card{
+    position:relative;border:1px solid var(--line);border-radius:16px;
+    padding:28px 24px 26px;background:var(--panel);text-decoration:none;
+    transition:transform 0.25s ease, border-color 0.25s ease;
+    min-height:190px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .concept-card:hover{transform:translateY(-4px);border-color:var(--cell-soft);}
+  .concept-card .tag{font-family:'JetBrains Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+  .concept-card h3{font-size:1.5rem;margin:0.7rem 0 0.5rem;color:var(--text);}
+  .concept-card p{font-size:0.9rem;color:var(--muted);line-height:1.5;}
+  .concept-card.soon{opacity:0.45;pointer-events:none;}
+  .concept-card .badge-live{
+    position:absolute;top:22px;right:22px;width:8px;height:8px;border-radius:50%;
+    background:var(--cell);box-shadow:0 0 8px 2px var(--cell-soft);
+  }
+
+  /* --- newsletter --- */
+  .newsletter{padding:140px 24px;text-align:center;}
+  .newsletter-form{
+    display:flex;gap:10px;max-width:420px;margin:2.2rem auto 0;flex-wrap:wrap;justify-content:center;
+  }
+  .newsletter-form input{
+    flex:1;min-width:220px;padding:13px 16px;border-radius:100px;border:1px solid var(--line);
+    background:var(--panel);color:var(--text);font-family:'Inter',sans-serif;font-size:0.92rem;
+  }
+  .newsletter-form input::placeholder{color:var(--muted);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wordmark"><span class="dot"></span>Stemma</div>
+  <div class="links">
+    <a href="#library">Concepts</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="field">
+    <div class="cell-dot" style="width:14px;height:14px;top:20%;left:15%;animation-delay:0s;"></div>
+    <div class="cell-dot" style="width:8px;height:8px;top:60%;left:80%;animation-delay:2s;"></div>
+    <div class="cell-dot" style="width:10px;height:10px;top:75%;left:25%;animation-delay:4s;"></div>
+    <div class="cell-dot" style="width:6px;height:6px;top:30%;left:70%;animation-delay:1s;"></div>
+  </div>
+  <p class="eyebrow">STEM CELL &amp; DEVELOPMENTAL BIOLOGY</p>
+  <h1>Stemma</h1>
+  <p>The biology of how a single cell becomes everything — explained in plain language, for anyone curious enough to ask how.</p>
+  <div class="actions">
+    <a class="cta" href="#newsletter">Get the newsletter</a>
+    <a class="cta ghost" href="#library">Explore concepts</a>
+  </div>
+  <div class="scroll-cue"><span class="line"></span>SCROLL</div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-inner" style="max-width:900px;">
+    <div class="divider"></div>
+    <h2>Biology worth understanding, not just reading about</h2>
+    <p>Every issue of the newsletter is a five-minute read on real research — stem cell biology, developmental biology, regenerative medicine. But five minutes isn't enough to explain the biology underneath it. That's what this site is for.</p>
+
+    <div class="about-grid">
+      <div>
+        <div class="num">01</div>
+        <h3>The newsletter</h3>
+        <p>Biotech news, summarized simply, with citations for anyone who wants to read the actual paper.</p>
+      </div>
+      <div>
+        <div class="num">02</div>
+        <h3>The concept library</h3>
+        <p>Scroll-driven explainers for the ideas that come up again and again — built once, referenced forever.</p>
+      </div>
+      <div>
+        <div class="num">03</div>
+        <h3>No paywall, no jargon</h3>
+        <p>Built for the curious, not just the credentialed. If you can read, you can follow along.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="library" id="library">
+  <div class="library-head">
+    <p class="eyebrow" style="justify-content:center;display:flex;">CONCEPT LIBRARY</p>
+    <h2 style="margin-top:0.8rem;font-size:clamp(1.8rem,4vw,2.6rem);">The building blocks</h2>
+    <p style="color:var(--muted);margin-top:0.8rem;">Every concept a Stemma issue might assume you already know.</p>
+  </div>
+
+  <div class="concept-grid">
+    <a class="concept-card" href="concepts/pluripotency.html">
+      <span class="badge-live"></span>
+      <div>
+        <span class="tag">Cell biology</span>
+        <h3>Pluripotency</h3>
+        <p>One cell, every fate — and how the road can run backwards.</p>
+      </div>
+    </a>
+
+    <a class="concept-card" href="concepts/transcription.html">
+      <span class="badge-live"></span>
+      <div>
+        <span class="tag">Molecular biology</span>
+        <h3>Transcription</h3>
+        <p>How a cell reads its own DNA to decide what to build.</p>
+      </div>
+    </a>
+
+    <div class="concept-card soon">
+      <div>
+        <span class="tag">Molecular biology</span>
+        <h3>Translation</h3>
+        <p>From RNA message to working protein. Coming soon.</p>
+      </div>
+    </div>
+
+    <div class="concept-card soon">
+      <div>
+        <span class="tag">Regenerative medicine</span>
+        <h3>Blastema</h3>
+        <p>The mass of cells behind regrowing a limb. Coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <div class="section-inner">
+    <div class="divider"></div>
+    <h2>Get the next issue</h2>
+    <p>One email, roughly weekly. Real research, explained simply, always cited.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Connect this form to your Substack/Beehiiv embed.');">
+      <input type="email" placeholder="you@email.com" required>
+      <button class="cta" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="wordmark" style="margin-bottom:8px;"><span class="dot"></span>Stemma</div>
+    <p>© 2026 Stemma. Biology, explained.</p>
+  </div>
+  <div style="display:flex;gap:22px;">
+    <a href="#">X</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Threads</a>
+    <a href="#">Building Stemma (Substack)</a>
+  </div>
+</footer>
+
+</body>
+</html>
