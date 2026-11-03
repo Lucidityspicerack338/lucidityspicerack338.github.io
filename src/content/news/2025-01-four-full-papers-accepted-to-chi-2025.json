@@ -2,12 +2,17 @@
   "date": "2025-01",
   "displayDate": "January 2025 · Acceptances",
   "title": "Four full papers accepted to CHI 2025",
-  "summary": "The lab’s news archive records four full-paper acceptances to CHI 2025 and congratulates the authors. The original announcement does not list the individual titles.",
+  "summary": "Four full papers were accepted to CHI 2025. Congratulations to all the authors.",
   "sourceUrl": null,
   "sourceLabel": null,
   "additionalSources": [],
   "category": "acceptance",
-  "details": [],
+  "details": [
+    "Weighing Benefits and Harms: Parental Mediation on Social Video Platforms — Renkai Ma, Yao Li, Sunhye Bai, Yubo Kou, and Xinning Gui",
+    "“The System is Made to Inherently Push Child Gambling in my Opinion”: Child Safety, Monetization, and Moderation on Roblox — Yubo Kou, Rie Helene (Lindy) Hernandez, and Xinning Gui",
+    "Customizing Emotional Support: How Do Individuals Construct and Interact With LLM-Powered Chatbots — Xi Zheng, Zhuoyang Li, Xinning Gui, and Yuhan Luo",
+    "Understanding Users’ Perception of Personally Identifiable Information — Qiurong Song, Yanlai Wu, Rie Helene (Lindy) Hernandez, Yao Li, Yubo Kou, and Xinning Gui"
+  ],
   "featured": false,
   "displayOrder": 15,
   "visibility": "public"

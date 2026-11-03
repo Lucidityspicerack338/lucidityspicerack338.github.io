@@ -1,13 +1,21 @@
 {
-  "date": "2026-11",
-  "displayDate": "November 2026 · Publication",
-  "title": "Paper on gamblification appears in the CHI PLAY 2026 program",
-  "summary": "From Stream to Stake examines gamblification practices on Twitch and how users perceive and experience them.",
-  "sourceUrl": "https://programs.sigchi.org/chiplay/2026/program/content/265058",
-  "sourceLabel": "Conference program",
-  "additionalSources": [],
-  "category": "publication",
-  "details": [],
+  "date": "2026-07",
+  "displayDate": "July 2026 · Acceptances",
+  "title": "Two papers accepted to CHI PLAY 2026",
+  "summary": "Two papers were accepted to CHI PLAY 2026. Congratulations to all the authors.",
+  "sourceUrl": "https://doi.org/10.1145/3831281",
+  "sourceLabel": "From Stream to Stake",
+  "additionalSources": [
+    {
+      "label": "Gaming Together on Discord",
+      "url": "https://doi.org/10.1145/3831286"
+    }
+  ],
+  "category": "acceptance",
+  "details": [
+    "From Stream to Stake: Gamblification Practices and User Perceptions on Twitch — Yunhan Liu, Sam Moradzadeh, Qiurong Song, Yubo Kou, and Xinning Gui",
+    "Gaming Together on Discord: Teen Gamer’s Cross-Platform Practices — Elena Koung, Xinning Gui, and Yubo Kou"
+  ],
   "featured": false,
   "displayOrder": 0,
   "visibility": "public"
