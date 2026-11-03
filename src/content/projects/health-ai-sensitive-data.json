@@ -6,30 +6,12 @@
     "Privacy"
   ],
   "relatedPublications": [
-    "self-diagnosis-through-ai-enabled-chatbot-2020",
     "medical-authority-ai-study-ai-enabled-2021",
-    "exploring-promoting-diagnostic-transparency-explainability-online-2021",
-    "user-experience-symptom-checkers-systematic-review-2022",
     "beyond-self-diagnosis-chatbot-based-symptom-2023",
-    "collective-privacy-sensemaking-social-media-about-2024",
-    "discourse-analysis-period-fertility-tracking-app-2024",
     "customizing-emotional-support-do-individuals-construct-2025",
-    "examining-people-prompt-gpt-seeking-mental-2025",
-    "understanding-users-perception-personally-identifiable-information-2025",
-    "usable-anonymity-reproductive-health",
-    "surveillance-as-care",
-    "privacy-control-conversational-llm-platforms-walkthrough-2026"
+    "usable-anonymity-reproductive-health"
   ],
-  "people": [
-    "xinning-gui",
-    "yubo-kou",
-    "lindy-hernandez",
-    "qiurong-song",
-    "zinan-zhang",
-    "yunhan-liu",
-    "yue-you",
-    "renkai-ma"
-  ],
+  "people": [],
   "funding": null,
   "status": "current",
   "label": "Health AI / Privacy",

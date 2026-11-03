@@ -8,7 +8,6 @@
   const search = form.querySelector('[name="query"]');
   const year = form.querySelector('[name="year"]');
   const venue = form.querySelector('[name="venue"]');
-  const area = form.querySelector('[name="area"]');
 
   // Lowercase, drop accents, and treat curly quotes and dashes like plain ones, so "Gui" or "children's" always match.
   const normalize = (text) =>
@@ -26,15 +25,13 @@
     const words = normalize(search.value).split(/\s+/).filter(Boolean);
     const selectedYear = year.value;
     const selectedVenue = venue.value.toLowerCase();
-    const selectedArea = area ? area.value : "";
     let visible = 0;
 
     records.forEach((record) => {
       const matches =
         words.every((word) => record.dataset.searchNorm.includes(word)) &&
         (!selectedYear || record.dataset.year === selectedYear) &&
-        (!selectedVenue || record.dataset.venue === selectedVenue) &&
-        (!selectedArea || (record.dataset.areas || "").split(" ").includes(selectedArea));
+        (!selectedVenue || record.dataset.venue === selectedVenue);
       record.hidden = !matches;
       if (matches) visible += 1;
     });
@@ -47,11 +44,4 @@
   form.addEventListener("change", applyFilters);
   form.addEventListener("reset", () => requestAnimationFrame(applyFilters));
   form.addEventListener("submit", (event) => event.preventDefault());
-
-  // Links such as /publications/?area=health open the page already filtered.
-  const params = new URLSearchParams(window.location.search);
-  if (area && params.get("area") && [...area.options].some((option) => option.value === params.get("area"))) {
-    area.value = params.get("area");
-    applyFilters();
-  }
 })();

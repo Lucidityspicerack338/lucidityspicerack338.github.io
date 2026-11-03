@@ -3,13 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SimpleHeader from "../components/SimpleHeader.astro";
 import SimpleFooter from "../components/SimpleFooter.astro";
 import InteriorHero from "../components/InteriorHero.astro";
-import PubList from "../components/PubList.astro";
-import { getProjects, getPublications, getResearchAreas, getSiteSettings, primaryArea, publicationsInArea, recentPapers } from "../lib/content";
+import { getProjects, getResearchAreas, getSiteSettings } from "../lib/content";
 
 const siteSettings = await getSiteSettings();
 const areas = await getResearchAreas();
 const projects = await getProjects();
-const publications = await getPublications();
 ---
 
 <BaseLayout title={`Research — ${siteSettings.labName}`} bodyClass="v8-page interior-page research-page">
@@ -24,7 +22,6 @@ const publications = await getPublications();
     </nav>
     {areas.map((area) => {
       const areaProjects = projects.filter((project) => project.researchArea.id === area.id);
-      const areaPapers = recentPapers(publicationsInArea(publications, area.id));
       return (
         <section class="area-section" id={area.id} aria-labelledby={`${area.id}-title`}>
           <div class="container">
@@ -46,13 +43,6 @@ const publications = await getPublications();
                 </div>
               </div>
             )}
-            <div class="area-block">
-              <div class="area-sub-row">
-                <h3 class="area-sub">Recent papers</h3>
-                <a class="more" href={`/publications/?area=${area.id}`}>All {areaPapers.length} papers in this area</a>
-              </div>
-              <PubList publications={areaPapers.filter((publication) => primaryArea(publication) === area.id).slice(0, 4)} headingLevel="h4" />
-            </div>
           </div>
         </section>
       );

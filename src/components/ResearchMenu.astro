@@ -11,7 +11,7 @@ const researchAreas = await getResearchAreas();
     </div>
     <div class="menu-body">
       <p class="menu-eyebrow">Select an area</p>
-      <p class="menu-hint">Choose a research area to see its projects and papers.</p>
+      <p class="menu-hint">Choose a research area to see its projects.</p>
       <nav aria-label="Research topics" class="research-options">
         {researchAreas.map((area) => (
           <a href={`/research/#${area.id}`}>

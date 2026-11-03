@@ -79,7 +79,7 @@ a:focus-visible,button:focus-visible,[role=tab]:focus-visible{outline:3px solid 
 .archive-heading{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:28px}
 .archive-heading h2{font-family:"Inter Display",Inter,Arial,sans-serif;font-size:clamp(32px,3vw,46px);letter-spacing:-.055em;line-height:1.1}
 .archive-heading>p{font:600 12px/1.4 ui-monospace,monospace;color:#526B64;text-transform:uppercase;letter-spacing:.04em}
-.publication-filters{display:grid;grid-template-columns:minmax(250px,1.6fr) repeat(3,minmax(130px,.75fr)) auto;gap:12px;align-items:end;padding:23px;background:#E9EEE8;border:1px solid #C2D0C7;margin-bottom:52px}
+.publication-filters{display:grid;grid-template-columns:minmax(250px,1.6fr) repeat(2,minmax(150px,.8fr)) auto;gap:12px;align-items:end;padding:23px;background:#E9EEE8;border:1px solid #C2D0C7;margin-bottom:52px}
 .filter-field{display:flex;flex-direction:column;gap:7px;min-width:0}
 .filter-field label{font:700 11px/1.4 ui-monospace,monospace;color:#315E55;text-transform:uppercase;letter-spacing:.055em}
 .filter-field input,.filter-field select{width:100%;height:47px;border:1px solid #9FB4A9;background:#FAFBF7;color:#202B2C;padding:0 13px;border-radius:0;font:15px Inter,Arial,sans-serif}
@@ -288,3 +288,5 @@ html:not(.js) .guide-tabs{display:none}
 .header,.simple-header{position:sticky;top:0;z-index:50;background:var(--paper)}
 html{scroll-padding-top:120px}
 @media(max-width:750px){html{scroll-padding-top:150px}}
+.project-more{margin-top:18px;font-size:14px;font-weight:700}
+.project-more a{color:#006F70!important;border-bottom:1px solid #006F70}

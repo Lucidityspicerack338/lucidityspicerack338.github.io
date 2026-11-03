@@ -4,13 +4,12 @@ import SimpleHeader from "../components/SimpleHeader.astro";
 import SimpleFooter from "../components/SimpleFooter.astro";
 import InteriorHero from "../components/InteriorHero.astro";
 import PubList from "../components/PubList.astro";
-import { awardedPublications, formatAuthors, getPublicationUrl, getPublications, getResearchAreas, getSiteSettings } from "../lib/content";
+import { awardedPublications, formatAuthors, getPublicationUrl, getPublications, getSiteSettings } from "../lib/content";
 
 const publications = await getPublications();
 const siteSettings = await getSiteSettings();
 const years = [...new Set(publications.map((publication) => publication.year))].sort((a, b) => b - a);
 const venues = [...new Set(publications.map((publication) => publication.venue))].sort();
-const areas = await getResearchAreas();
 const awards = awardedPublications(publications);
 ---
 
@@ -43,10 +42,6 @@ const awards = awardedPublications(publications);
             <label for="publication-venue">Venue</label>
             <select id="publication-venue" name="venue"><option value="">All venues</option>{venues.map((venue) => <option value={venue}>{venue}</option>)}</select>
           </div>
-          <div class="filter-field">
-            <label for="publication-area">Research area</label>
-            <select id="publication-area" name="area"><option value="">All areas</option>{areas.map((area) => <option value={area.id}>{area.menuTitle}</option>)}</select>
-          </div>
           <button class="filter-reset" type="reset">Reset</button>
         </form>
         <div class="archive-heading">
@@ -63,7 +58,6 @@ const awards = awardedPublications(publications);
               class="publication-record"
               data-year={publication.year}
               data-venue={publication.venue.toLowerCase()}
-              data-areas={publication.researchAreas.map((area) => area.id).join(" ")}
               data-search={`${publication.title} ${authors} ${publication.venue} ${publication.year} ${publication.award ?? ""}`.toLowerCase()}
             >
               <div class="publication-date"><strong>{publication.venue}</strong><span>{publication.month} {publication.year}</span></div>

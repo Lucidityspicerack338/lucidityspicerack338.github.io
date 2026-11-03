@@ -67,8 +67,9 @@ const amount = project.funding?.amountUsd ? `$${project.funding.amountUsd.toLoca
 
       {projectPapers.length > 0 && (
         <div class="project-block">
-          <h2>Papers</h2>
+          <h2>Example papers</h2>
           <PubList publications={projectPapers} />
+          <p class="project-more"><a href="/publications/">All publications</a></p>
         </div>
       )}
     </section>

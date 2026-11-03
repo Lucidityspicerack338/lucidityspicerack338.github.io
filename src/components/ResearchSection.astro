@@ -19,7 +19,7 @@ const researchAreas = await getResearchAreas();
       {researchAreas.map((area) => (
         <article class="strand" id={area.id}>
           <span aria-hidden="true" class="strand-index">{area.displayNumber}</span>
-          <div class="strand-title"><h3><a href={`/research/#${area.id}`}>{area.title}</a></h3><p class="strand-topics">{area.topics}</p><a class="strand-more" href={`/research/#${area.id}`}>Projects and papers</a></div>
+          <div class="strand-title"><h3><a href={`/research/#${area.id}`}>{area.title}</a></h3><p class="strand-topics">{area.topics}</p><a class="strand-more" href={`/research/#${area.id}`}>Projects in this area</a></div>
           <p>{area.description}</p>
         </article>
       ))}
