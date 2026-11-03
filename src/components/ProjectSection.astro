@@ -1,6 +1,10 @@
 ---
 import { getProjects } from "../lib/content";
 
+interface Props {
+  showMoreLink?: boolean;
+}
+const { showMoreLink = true } = Astro.props;
 const projects = (await getProjects()).filter((project) => project.featured);
 ---
 
@@ -8,7 +12,7 @@ const projects = (await getProjects()).filter((project) => project.featured);
   <div class="container">
     <div class="section-header">
       <div><h2 id="work-title">Current projects and studies</h2></div>
-      <a class="more" href="/research/#projects">Explore projects ↗</a>
+      {showMoreLink && <a class="more" href="/research/#projects">Explore projects ↗</a>}
     </div>
     <div class="work-grid">
       {projects.map((project, index) => (

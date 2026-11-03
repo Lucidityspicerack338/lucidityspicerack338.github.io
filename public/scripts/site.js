@@ -70,6 +70,8 @@
     if (moveFocus) tab.focus();
   };
 
+  if (tabs.length) activateTab(tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0]);
+
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => activateTab(tab));
     tab.addEventListener("keydown", (event) => {

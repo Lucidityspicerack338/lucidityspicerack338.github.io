@@ -260,3 +260,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--warm);outline-offse
   .press-icon{animation:none}
   .strand:hover{background:transparent}
 }
+
+/* Without JavaScript: show the navigation instead of a menu button that cannot open */
+html:not(.js) .menu{display:none}
+@media(max-width:760px){
+  html:not(.js) .header-main{height:auto;flex-wrap:wrap;padding:18px 0 10px}
+  html:not(.js) .nav{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;position:static;width:100%;padding:8px 0 0;border:0;gap:4px 22px}
+}
+/* Larger click and tap areas for small text links (no visual change) */
+.nav a,.simple-header nav a,.simple-footer a{position:relative}
+.nav a::after,.simple-header nav a::after,.simple-footer a::after{content:"";position:absolute;inset:-5px -4px}

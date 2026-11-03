@@ -30,6 +30,7 @@ const {
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
     <title>{title}</title>
+    <script is:inline>document.documentElement.classList.add("js");</script>
   </head>
   <body class={bodyClass}>
     <slot />
