@@ -1,0 +1,26 @@
+{
+  "title": "Privacy Control in Conversational LLM Platforms: A Walkthrough Study",
+  "authors": [
+    "Zhuoyang Li",
+    "Yanlai Wu",
+    "Yao Li",
+    "Xinning Gui",
+    "Yuhan Luo"
+  ],
+  "year": 2026,
+  "month": null,
+  "venue": "CHI",
+  "doi": "10.1145/3772318.3791054",
+  "pdfUrl": null,
+  "externalUrl": null,
+  "projectAssociations": [],
+  "researchThemes": [
+    "Privacy",
+    "Platforms",
+    "AI"
+  ],
+  "featured": false,
+  "award": null,
+  "displayOrder": 13,
+  "visibility": "public"
+}

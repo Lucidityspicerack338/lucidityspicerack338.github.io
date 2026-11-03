@@ -1,0 +1,13 @@
+{
+  "label": "Undergraduate RA",
+  "heading": "Undergraduate research",
+  "intro": "We welcome undergraduates who are curious about research. Roles depend on active projects, mentoring capacity, and funding, so we can't guarantee an opening, but we're happy to hear from you.",
+  "steps": [
+    "Explore our current work and find an area that interests you.",
+    "Share any research, design, programming, or social-science experience you have.",
+    "Let us know roughly when and how much time you could contribute."
+  ],
+  "note": null,
+  "displayOrder": 2,
+  "visibility": "public"
+}

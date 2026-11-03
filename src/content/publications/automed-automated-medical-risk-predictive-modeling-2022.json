@@ -1,0 +1,26 @@
+{
+  "title": "AUTOMED: Automated Medical Risk Predictive Modeling on Electronic Health Records",
+  "authors": [
+    "Suhan Cui",
+    "Jiaqi Wang",
+    "Xinning Gui",
+    "Ting Wang",
+    "Fenglong Ma"
+  ],
+  "year": 2022,
+  "month": null,
+  "venue": "BIBM",
+  "doi": "10.1109/bibm55620.2022.9995209",
+  "pdfUrl": null,
+  "externalUrl": null,
+  "projectAssociations": [],
+  "researchThemes": [
+    "Health",
+    "Safety",
+    "AI"
+  ],
+  "featured": false,
+  "award": null,
+  "displayOrder": 61,
+  "visibility": "public"
+}

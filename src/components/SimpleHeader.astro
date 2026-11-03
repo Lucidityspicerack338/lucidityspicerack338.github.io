@@ -1,0 +1,25 @@
+---
+import { getSiteSettings } from "../lib/content";
+
+interface Props {
+  current?: "research" | "publications" | "people" | "news" | "join";
+}
+const { current } = Astro.props;
+const siteSettings = await getSiteSettings();
+---
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="simple-header">
+  <div class="simple-inner">
+    <a href="/" class="brand" aria-label={`${siteSettings.labName} homepage`}>
+      <img src="/images/health-and-play-logo.png" alt={siteSettings.labName} />
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="/research/" aria-current={current === "research" ? "page" : undefined}>Research</a>
+      <a href="/publications/" aria-current={current === "publications" ? "page" : undefined}>Publications</a>
+      <a href="/people/" aria-current={current === "people" ? "page" : undefined}>People</a>
+      <a href="/news/" aria-current={current === "news" ? "page" : undefined}>News</a>
+      <a href="/join-us/" aria-current={current === "join" ? "page" : undefined}>Join us</a>
+    </nav>
+  </div>
+</header>

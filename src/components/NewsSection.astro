@@ -1,0 +1,20 @@
+---
+import { getNewsItems } from "../lib/content";
+
+const newsItems = await getNewsItems();
+const homepageNews = newsItems.filter((item) => item.featured);
+---
+
+<section aria-labelledby="news-title" class="section news" id="news">
+  <div class="container">
+    <div class="section-header">
+      <div><h2 id="news-title">News</h2></div>
+      <a class="more" href="/news/">News archive ↗</a>
+    </div>
+    <div class="news-row">
+      {homepageNews.map((item) => (
+        <article class="news-item"><time datetime={item.date}>{item.displayDate}</time><h3>{item.title}</h3><p>{item.summary}</p></article>
+      ))}
+    </div>
+  </div>
+</section>

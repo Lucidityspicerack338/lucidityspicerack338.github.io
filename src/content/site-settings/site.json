@@ -1,0 +1,27 @@
+{
+  "labName": "Health and Play Lab",
+  "description": "The Health and Play Lab studies how digital technologies support and sometimes undermine health, wellbeing, and play.",
+  "institutionalAffiliation": {
+    "institution": "The Pennsylvania State University",
+    "shortName": "Penn State",
+    "college": "College of Information Sciences and Technology",
+    "address": "Westgate Building · University Park, PA 16802"
+  },
+  "contactInformation": {
+    "generalEmail": null,
+    "directors": [
+      {
+        "name": "Xinning Gui",
+        "email": "xinninggui@psu.edu"
+      },
+      {
+        "name": "Yubo Kou",
+        "email": "yubokou@psu.edu"
+      }
+    ],
+    "joinPage": "/join-us/"
+  },
+  "lastSubstantiveContentUpdate": "2026-11-03",
+  "lastSubstantiveContentUpdateDisplay": "November 3, 2026",
+  "visibility": "public"
+}

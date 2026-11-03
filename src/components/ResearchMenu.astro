@@ -1,0 +1,29 @@
+---
+import { getResearchAreas } from "../lib/content";
+
+const researchAreas = await getResearchAreas();
+---
+
+<aside aria-label="Explore research topics" class="hero-right">
+  <div class="research-menu">
+    <div class="menu-head">
+      <span>HEALTH AND PLAY / RESEARCH</span><span aria-hidden="true" class="menu-cross">✳</span>
+    </div>
+    <div class="menu-body">
+      <p class="menu-eyebrow">Select an area</p>
+      <nav aria-label="Research topics" class="research-options">
+        {researchAreas.map((area) => (
+          <a href={`#${area.id}`}>
+            <span aria-hidden="true" class={`theme-tile ${area.marker}`}></span>
+            <span><strong>{area.menuTitle}</strong><small>{area.menuSummary}</small></span>
+            <span aria-hidden="true" class="menu-arr">↗</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+    <a aria-label="Press start: read about our research" class="press-start" href="#research">
+      <span aria-hidden="true" class="press-icon">▶</span><span>PRESS START</span>
+      <span aria-hidden="true" class="press-caption">EXPLORE RESEARCH &nbsp;↗</span>
+    </a>
+  </div>
+</aside>

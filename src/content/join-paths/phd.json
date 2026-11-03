@@ -1,0 +1,13 @@
+{
+  "label": "PhD",
+  "heading": "PhD applicants",
+  "intro": "We're glad to hear from students interested in human-centered computing, HCI, social computing, health informatics, privacy, and platform governance. Advising availability changes from year to year, so we can't promise an opening in any given cycle.",
+  "steps": [
+    "Explore our research and recent publications to see where your interests fit.",
+    "Apply through Penn State's official doctoral admissions process and follow the program's current requirements.",
+    "If you'd like to reach out, tell us briefly about your research interests and how they connect to our work. Feel free to include a CV."
+  ],
+  "note": "You don't need to meet with us before applying. Reaching out is welcome, but it doesn't by itself mean an advising or funding position is available.",
+  "displayOrder": 0,
+  "visibility": "public"
+}

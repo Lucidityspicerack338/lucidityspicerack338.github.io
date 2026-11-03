@@ -1,0 +1,122 @@
+---
+import { getPeople } from "../lib/content";
+
+const people = await getPeople();
+const directors = people.filter((person) => person.role === "Co-director");
+const students = people.filter(
+  (person) => person.studentStatus === "current" && person.role === "Ph.D. student",
+);
+const researchers = people.filter(
+  (person) => person.studentStatus === "not-applicable" && person.role !== "Co-director",
+);
+const alumni = people.filter((person) => person.studentStatus === "alumni");
+---
+
+<section class="people-directory-section" aria-label="Lab members">
+  <div class="page-shell people-directory">
+    <section class="people-roster-block" aria-labelledby="co-directors-title">
+      <div class="people-group-heading">
+        <div>
+          <p>Lab leadership</p>
+          <h2 id="co-directors-title">Co-directors</h2>
+        </div>
+        <span>Joint leadership</span>
+      </div>
+      <div class="co-director-grid">
+        {directors.map((person) => (
+          <article class="directory-card director-profile">
+            <div class="directory-portrait">
+              {person.photo ? (
+                <img src={person.photo} alt="" width="700" height="700" loading="eager" decoding="async" />
+              ) : (
+                <span aria-hidden="true">{person.initials}</span>
+              )}
+            </div>
+            <div class="directory-copy">
+              <p class="directory-role">{person.role}</p>
+              <h3>{person.name}</h3>
+              {person.researchInterests.length > 0 && <p>{person.researchInterests.join(" ")}</p>}
+              {person.personalWebsite && (
+                <a class="profile-link" href={person.personalWebsite} rel="noopener noreferrer" target="_blank">Personal website</a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="people-roster-block" aria-labelledby="phd-students-title">
+      <div class="people-group-heading">
+        <div>
+          <p>Current members</p>
+          <h2 id="phd-students-title">Ph.D. students</h2>
+        </div>
+        <span>Year indicates Ph.D. cohort</span>
+      </div>
+      <div class="student-directory-grid">
+        {students.map((person) => (
+          <article class="directory-card student-profile">
+            <div class="directory-portrait">
+              {person.photo ? (
+                <img src={person.photo} alt="" width="700" height="700" loading="lazy" decoding="async" />
+              ) : (
+                <span aria-hidden="true">{person.initials}</span>
+              )}
+            </div>
+            <div class="directory-copy">
+              <p class="directory-role">{person.role}{person.cohortYear ? ` · ${person.cohortYear} cohort` : ""}</p>
+              <h3>{person.name}</h3>
+              {person.researchInterests.length > 0 && (
+                <div class="current-quest">
+                  <span>CURRENT QUEST</span>
+                  <p>{person.researchInterests.join(" · ")}</p>
+                </div>
+              )}
+              {person.personalWebsite && (
+                <a class="profile-link" href={person.personalWebsite} rel="noopener noreferrer" target="_blank">Personal website</a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {researchers.length > 0 && (
+      <section class="people-roster-block" aria-labelledby="researchers-title">
+        <div class="people-group-heading">
+          <div><p>Current members</p><h2 id="researchers-title">Other lab researchers</h2></div>
+        </div>
+        <div class="student-directory-grid">
+          {researchers.map((person) => (
+            <article class="directory-card student-profile">
+              <div class="directory-portrait">
+                {person.photo ? <img src={person.photo} alt="" width="700" height="700" loading="lazy" decoding="async" /> : <span aria-hidden="true">{person.initials}</span>}
+              </div>
+              <div class="directory-copy"><p class="directory-role">{person.role}</p><h3>{person.name}</h3></div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {alumni.length > 0 && (
+      <section class="people-roster-block alumni-block" aria-labelledby="alumni-title">
+        <div class="people-group-heading">
+          <div><p>Former members</p><h2 id="alumni-title">Alumni</h2></div>
+        </div>
+        <ul class="alumni-list">
+          {alumni.map((person) => (
+            <li>
+              <span class="alumni-initials" aria-hidden="true">{person.initials}</span>
+              <div>
+                <h3>{person.personalWebsite ? <a href={person.personalWebsite} rel="noopener noreferrer" target="_blank">{person.name}</a> : person.name}</h3>
+                <p>Former {person.role}</p>
+                {person.alumniDestination && <p class="alumni-destination">{person.alumniDestination}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</section>

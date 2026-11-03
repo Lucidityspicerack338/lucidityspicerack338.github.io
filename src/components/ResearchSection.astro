@@ -1,0 +1,23 @@
+---
+import { getResearchAreas } from "../lib/content";
+
+const researchAreas = await getResearchAreas();
+---
+
+<section aria-labelledby="research-title" class="section research" id="research">
+  <div class="container">
+    <div class="section-top">
+      <div><h2 id="research-title">Research</h2></div>
+      <p class="intro">Our research brings together work on health technologies, digital play, and the experiences of people who use them. The three areas below reflect related lines of inquiry across the lab.</p>
+    </div>
+    <div class="research-strands">
+      {researchAreas.map((area) => (
+        <article class="strand" id={area.id}>
+          <span aria-hidden="true" class="strand-index">{area.displayNumber}</span>
+          <div class="strand-title"><h3>{area.title}</h3><p class="strand-topics">{area.topics}</p></div>
+          <p>{area.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

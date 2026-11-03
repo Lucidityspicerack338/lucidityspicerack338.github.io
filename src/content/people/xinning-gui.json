@@ -1,0 +1,17 @@
+{
+  "name": "Xinning Gui",
+  "role": "Co-director",
+  "studentStatus": "not-applicable",
+  "startYear": null,
+  "cohortYear": null,
+  "researchInterests": [
+    "Human-centered AI and health informatics, health data privacy, and youth wellbeing."
+  ],
+  "photo": "/images/people/xinning-gui.jpg",
+  "personalWebsite": "https://sites.psu.edu/xinninggui/",
+  "alumniDestination": null,
+  "initials": "XG",
+  "displayOrder": 0,
+  "featured": true,
+  "visibility": "public"
+}

@@ -1,0 +1,22 @@
+---
+import { getProjects } from "../lib/content";
+
+const projects = (await getProjects()).filter((project) => project.featured);
+---
+
+<section aria-labelledby="work-title" class="section work-section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div><h2 id="work-title">Current projects and studies</h2></div>
+      <a class="more" href="/research/#projects">Explore projects ↗</a>
+    </div>
+    <div class="work-grid">
+      {projects.map((project, index) => (
+        <article class:list={["work", { feature: index === 0 }]}>
+          <div class="work-label"><span>{project.label}</span><span class="work-no">{project.displayNumber}</span></div>
+          <div class="work-content"><h3>{project.title}</h3><p>{project.description}</p></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{
+  "label": "Master's",
+  "heading": "Master's students",
+  "intro": "We welcome master's students who want to get involved in research. Start by checking your Penn State program's requirements. Opportunities depend on the needs of our current projects.",
+  "steps": [
+    "Read about our current research.",
+    "Tell us which methods and topics interest you.",
+    "Send the lab a short introduction and your availability."
+  ],
+  "note": null,
+  "displayOrder": 1,
+  "visibility": "public"
+}

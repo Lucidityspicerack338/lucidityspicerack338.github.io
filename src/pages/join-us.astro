@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SimpleHeader from "../components/SimpleHeader.astro";
+import SimpleFooter from "../components/SimpleFooter.astro";
+import JoinGuide from "../components/JoinGuide.astro";
+import { getSiteSettings } from "../lib/content";
+
+const siteSettings = await getSiteSettings();
+---
+
+<BaseLayout title={`Join Us — ${siteSettings.labName}`} bodyClass="v8-page join-page">
+  <SimpleHeader current="join" />
+  <main id="main" class="join-main">
+    <div class="join-heading">
+      <p class="join-overline">HEALTH AND PLAY LAB / JOIN US</p>
+      <h1>Join the lab.</h1>
+      <p>Information for prospective students interested in our research on health technologies, digital play, privacy, safety, and online communities.</p>
+    </div>
+    <JoinGuide />
+    <div class="join-bottom">
+      <div><h2>Contact</h2><p>Have a research question or an idea for a collaboration? Either co-director would be glad to hear from you.</p></div>
+      <div class="email-links">
+        {siteSettings.contactInformation.directors.map((contact) => (
+          <a href={`mailto:${contact.email}`}>{contact.name} ↗</a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <SimpleFooter backLink />
+</BaseLayout>

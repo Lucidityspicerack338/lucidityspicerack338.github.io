@@ -1,0 +1,18 @@
+{
+  "date": "2025-04",
+  "displayDate": "April–May 2025 · Acceptances",
+  "title": "Three papers accepted",
+  "summary": "The lab announced papers at SOUPS 2025 and DIS 2025, plus a journal review of video game research in CSCW.",
+  "sourceUrl": "https://doi.org/10.1007/s10606-025-09519-z",
+  "sourceLabel": "Video game research review",
+  "additionalSources": [],
+  "category": "acceptance",
+  "details": [
+    "How Predatory Monetization Designs Manifest in Child-Friendly Video Games — Qiurong Song, Zinan Zhang, Rie Helene (Lindy) Hernandez, Xinning Gui, and Yubo Kou · SOUPS 2025",
+    "Reflecting Upon the Unintended Consequences of Personal Informatics Systems: A Systematic Review of Empirical Studies — Yuhan Luo, Xinning Gui, Xianghua (Sharon) Ding, Xi Zheng, Rie Helene (Lindy) Hernandez, Zhuoyang Li, and Qiurong Song · DIS 2025",
+    "The State of Video Game Research in Computer-Supported Cooperative Work – A Systematic Literature Review — Sam Moradzadeh, Zinan Zhang, Xinning Gui, and Yubo Kou · Computer Supported Cooperative Work"
+  ],
+  "featured": false,
+  "displayOrder": 12,
+  "visibility": "public"
+}

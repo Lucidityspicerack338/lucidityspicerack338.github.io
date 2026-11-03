@@ -1,0 +1,23 @@
+---
+import { getSiteSettings } from "../lib/content";
+
+const siteSettings = await getSiteSettings();
+const affiliation = siteSettings.institutionalAffiliation;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <b>{siteSettings.labName}</b>
+        <p>{affiliation.college}<br />{affiliation.institution}</p>
+      </div>
+      <div><p>{affiliation.address}<br /><a href={siteSettings.contactInformation.joinPage}>Contact / Join us ↗</a></p></div>
+      <div><p><a href="#top">Back to top ↑</a></p></div>
+    </div>
+    <div class="status">
+      <span>© {new Date().getFullYear()} {siteSettings.labName}</span>
+      <span id="last-saved">Last saved: {siteSettings.lastSubstantiveContentUpdateDisplay}</span>
+    </div>
+  </div>
+</footer>

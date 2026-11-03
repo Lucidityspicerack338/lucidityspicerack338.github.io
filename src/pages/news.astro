@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SimpleHeader from "../components/SimpleHeader.astro";
+import SimpleFooter from "../components/SimpleFooter.astro";
+import InteriorHero from "../components/InteriorHero.astro";
+import { getNewsItems, getNewsSourceLinks, getSiteSettings } from "../lib/content";
+
+const newsItems = await getNewsItems();
+const siteSettings = await getSiteSettings();
+---
+
+<BaseLayout title={`News — ${siteSettings.labName}`} bodyClass="v8-page interior-page news-page">
+  <SimpleHeader current="news" />
+  <main id="main">
+    <InteriorHero
+      eyebrow="NEWS"
+      title="News"
+      intro="Publications, research activity, talks, recognition, grants, and lab milestones from 2023 to the present."
+    />
+    <section class="archive-section" aria-labelledby="news-archive-title">
+      <div class="page-shell">
+        <div class="archive-heading"><h2 id="news-archive-title">Lab timeline</h2><p>{newsItems.length} updates · 2023–present</p></div>
+        <div class="news-archive">
+          {newsItems.map((item, index) => {
+            const sourceLinks = getNewsSourceLinks(item);
+
+            return (
+            <article class="news-archive-item">
+              <div class="news-archive-meta"><span>{String(index + 1).padStart(2, "0")}</span><time datetime={item.date}>{item.displayDate}</time></div>
+              <div class="news-archive-copy">
+                <h3>{item.title}</h3><p>{item.summary}</p>
+                {item.details.length > 0 && (
+                  <ul class="news-details" aria-label="Announcement details">
+                    {item.details.map((detail) => <li>{detail}</li>)}
+                  </ul>
+                )}
+                {sourceLinks.length > 0 && (
+                  <ul class="source-links" aria-label="Sources and publication links">
+                    {sourceLinks.map((link) => <li><a href={link.url} rel="noopener noreferrer" target="_blank">{link.label}</a></li>)}
+                  </ul>
+                )}
+              </div>
+            </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  </main>
+  <SimpleFooter backLink />
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import { getSiteSettings } from "../lib/content";
+
+const siteSettings = await getSiteSettings();
+---
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" id="top">
+  <div class="container header-main">
+    <a aria-label={`${siteSettings.labName} homepage`} class="wordmark" href="/#top">
+      <img alt="Health and Play" height="286" src="/images/health-and-play-logo.png" width="2048" />
+    </a>
+    <button aria-controls="navigation" aria-expanded="false" class="menu" type="button">Menu +</button>
+    <nav aria-label="Primary navigation" class="nav" id="navigation">
+      <a href="/research/">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/people/">People</a>
+      <a href="/news/">News</a>
+      <a class="join" href="/join-us/">Join us ↗</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,26 @@
+{
+  "title": "Benchmarking Automated Clinical Language Simplification: Dataset, Algorithm, and Evaluation",
+  "authors": [
+    "Junyu Luo",
+    "Junxian Lin",
+    "Chi Lin",
+    "Cao Xiao",
+    "Xinning Gui",
+    "Fenglong Ma"
+  ],
+  "year": 2022,
+  "month": null,
+  "venue": "COLING",
+  "doi": null,
+  "pdfUrl": null,
+  "externalUrl": "https://aclanthology.org/2022.coling-1.313/",
+  "projectAssociations": [],
+  "researchThemes": [
+    "Health",
+    "AI"
+  ],
+  "featured": false,
+  "award": null,
+  "displayOrder": 60,
+  "visibility": "public"
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Health technologies, privacy, and wellbeing",
+  "topics": "Human-centered health AI · Sensitive health data · Care technologies",
+  "menuTitle": "Health technologies & wellbeing",
+  "menuSummary": "AI, privacy, care, accountability",
+  "marker": "filled",
+  "description": "We study how people use and navigate health technologies, from conversational AI and symptom checkers to reproductive health apps and connected devices. Our research examines how these technologies shape healthcare decisions, care practices, and privacy, and how their design and governance can better support transparency, safety, and accountability.",
+  "displayNumber": "01",
+  "displayOrder": 0,
+  "visibility": "public"
+}

@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HomeHeader from "../components/HomeHeader.astro";
+import ResearchMenu from "../components/ResearchMenu.astro";
+import ResearchSection from "../components/ResearchSection.astro";
+import ProjectSection from "../components/ProjectSection.astro";
+import PublicationSection from "../components/PublicationSection.astro";
+import PeopleSection from "../components/PeopleSection.astro";
+import NewsSection from "../components/NewsSection.astro";
+import HomeFooter from "../components/HomeFooter.astro";
+import { getSiteSettings } from "../lib/content";
+
+const siteSettings = await getSiteSettings();
+const primaryContact = siteSettings.contactInformation.directors[0];
+---
+
+<BaseLayout title={siteSettings.labName}>
+  <HomeHeader />
+  <main id="main">
+    <section aria-labelledby="hero-heading" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="meta">The Health and Play Lab</div>
+          <h1 id="hero-heading"><span class="hero-health">Health</span> and <span class="hero-play">play</span> are <span class="hero-value">fundamental human values.</span></h1>
+          <p class="hero-copy">At the Health and Play Lab, we study how digital technologies support—and sometimes undermine—health, wellbeing, and play. Our research examines how people experience health technologies, AI systems, games, and online communities, and how their design and governance shape privacy, safety, accountability, and participation.</p>
+          <div class="hero-links"><a class="button" href="#research">Explore research <span aria-hidden="true">↗</span></a><a class="underlink" href="/join-us/">Join us ↗</a></div>
+        </div>
+        <ResearchMenu />
+      </div>
+    </section>
+    <ResearchSection />
+    <ProjectSection />
+    <PublicationSection />
+    <PeopleSection />
+    <NewsSection />
+  </main>
+  <section aria-labelledby="join-title" class="join-section" id="join">
+    <div class="container join-grid">
+      <div><p class="join-label">Working with us</p><h2 id="join-title">Join the lab</h2><p>Information for prospective students and collaborators interested in our research.</p></div>
+      <div class="join-links"><a class="button" href={siteSettings.contactInformation.joinPage}>Joining information ↗</a><a class="underlink" href={`mailto:${primaryContact.email}`}>Contact the lab ↗</a></div>
+    </div>
+  </section>
+  <HomeFooter />
+</BaseLayout>

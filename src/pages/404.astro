@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SimpleHeader from "../components/SimpleHeader.astro";
+import SimpleFooter from "../components/SimpleFooter.astro";
+import { getSiteSettings } from "../lib/content";
+
+const siteSettings = await getSiteSettings();
+---
+
+<BaseLayout title={`404 — ${siteSettings.labName}`} bodyClass="v8-page error-page" robots="noindex">
+  <SimpleHeader />
+  <main id="main" class="error-main">
+    <div class="arcade-frame">
+      <div class="game-hud"><span>HEALTH &amp; PLAY / 404</span><span aria-hidden="true" class="hud-blocks"><i></i><i></i><i></i><i></i></span><span>NO PAGE FOUND</span></div>
+      <div class="pixel-hero">
+        <img src="/images/game-over-pixel.svg" alt="" aria-hidden="true" class="pixel-title" />
+        <h1 class="sr-only">Game over — 404 page not found</h1>
+        <p class="error-description">The page you were looking for isn't here.</p>
+        <nav aria-label="Choose where to go" class="continue-menu">
+          <a class="game-choice" href="/"><span class="cursor" aria-hidden="true">▸</span><span class="choice-label">CONTINUE</span><span class="choice-description">Return home</span><span aria-hidden="true">↗</span></a>
+          <a class="game-choice" href="/#research"><span class="cursor" aria-hidden="true">▸</span><span class="choice-label">SELECT STAGE</span><span class="choice-description">Explore research</span><span aria-hidden="true">↗</span></a>
+        </nav>
+        <p class="game-hint">A wrong turn, not the end of the game.</p>
+      </div>
+      <div class="game-bottom"><span>01 — HEALTH</span><span>02 — PLAY</span><span>03 — THE WORK IN BETWEEN</span></div>
+    </div>
+  </main>
+  <SimpleFooter />
+</BaseLayout>

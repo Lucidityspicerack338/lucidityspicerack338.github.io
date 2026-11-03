@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-13",
+  "displayDate": "April 2026 · Publications",
+  "title": "Four papers published at CHI 2026",
+  "summary": "The lab’s CHI 2026 work addresses child-centered game safety, baby-monitoring practices, teenagers’ risky interactions on Discord, and moderation among video creators.",
+  "sourceUrl": "https://doi.org/10.1145/3772318.3791090",
+  "sourceLabel": "Player Safety by Design",
+  "additionalSources": [
+    {
+      "label": "Surveillance as Care",
+      "url": "https://doi.org/10.1145/3772318.3791462"
+    },
+    {
+      "label": "Teen Vigilance",
+      "url": "https://doi.org/10.1145/3772318.3790781"
+    },
+    {
+      "label": "Why Creators Break Rules",
+      "url": "https://doi.org/10.1145/3772318.3791692"
+    }
+  ],
+  "category": "publication",
+  "details": [
+    "Player Safety by Design: Co-Designing Child-Centered Safety Mechanisms with Children",
+    "Surveillance as Care: Configuring Baby Monitors in the Home",
+    "Teen Vigilance: Navigating Risky Social Interactions on Discord",
+    "Why Creators Break Rules: Quantitative Evidence on Moral Disengagement and Self-Control"
+  ],
+  "featured": false,
+  "displayOrder": 3,
+  "visibility": "public"
+}

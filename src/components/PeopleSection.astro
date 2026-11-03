@@ -1,0 +1,40 @@
+---
+import { getPeople } from "../lib/content";
+
+const people = await getPeople();
+const directors = people.filter((person) => person.role === "Co-director" && person.featured);
+const students = people.filter((person) => person.studentStatus === "current" && person.featured);
+---
+
+<section aria-labelledby="people-title" class="section people" id="people">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="people-title">People</h2>
+      <a class="more" href="/people/">All people ↗</a>
+    </div>
+    <p class="people-label">Co-directors</p>
+    <div class="director-grid">
+      {directors.map((director) => (
+        <article class="director director-card">
+          <div aria-label="Photo to be added" class="initial-box">{director.initials}</div>
+          <div class="director-information">
+            <h3 class="director-name">
+              {director.personalWebsite ? (
+                <a href={director.personalWebsite} rel="noopener noreferrer" target="_blank">{director.name} ↗</a>
+              ) : director.name}
+            </h3>
+            <p class="director-meta">{director.role}</p><p>{director.researchInterests.join(" ")}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="students-wrap">
+      <div class="students-heading"><h3>Ph.D. students</h3><p>Year indicates Ph.D. cohort, not lab joining date.</p></div>
+      <ul class="student-tiles">
+        {students.map((student) => (
+          <li><div aria-label="Photo to be added" class="student-initial">{student.initials}</div><b>{student.name}</b><span>{student.cohortYear}</span></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

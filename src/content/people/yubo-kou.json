@@ -1,0 +1,17 @@
+{
+  "name": "Yubo Kou",
+  "role": "Co-director",
+  "studentStatus": "not-applicable",
+  "startYear": null,
+  "cohortYear": null,
+  "researchInterests": [
+    "Digital play, online communities, moderation, and platform governance."
+  ],
+  "photo": "/images/people/yubo-kou.jpg",
+  "personalWebsite": "https://yubokou.github.io/",
+  "alumniDestination": null,
+  "initials": "YK",
+  "displayOrder": 1,
+  "featured": true,
+  "visibility": "public"
+}

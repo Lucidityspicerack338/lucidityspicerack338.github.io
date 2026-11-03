@@ -1,0 +1,26 @@
+{
+  "title": "Beyond Self-diagnosis: How a Chatbot-based Symptom Checker Should Respond",
+  "authors": [
+    "Yue You",
+    "Chun-Hua Tsai",
+    "Yao Li",
+    "Fenglong Ma",
+    "Christopher Heron",
+    "Xinning Gui"
+  ],
+  "year": 2023,
+  "month": null,
+  "venue": "TOCHI",
+  "doi": "10.1145/3589959",
+  "pdfUrl": null,
+  "externalUrl": null,
+  "projectAssociations": [],
+  "researchThemes": [
+    "Health",
+    "AI"
+  ],
+  "featured": false,
+  "award": null,
+  "displayOrder": 48,
+  "visibility": "public"
+}
