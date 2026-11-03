@@ -17,5 +17,9 @@
   "featured": false,
   "award": "Best Paper Honorable Mention",
   "displayOrder": 86,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "health"
+  ]
 }

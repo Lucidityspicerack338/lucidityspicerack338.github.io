@@ -1,34 +1,16 @@
 ---
-import { formatAuthors, getPublicationUrl, getPublications } from "../lib/content";
+import PubList from "./PubList.astro";
+import { getPublications, recentPapers } from "../lib/content";
 
-const publications = await getPublications();
-const homepagePublications = publications.filter((publication) => publication.featured);
+const homepagePublications = recentPapers(await getPublications(), 6);
 ---
 
 <section aria-labelledby="publications-title" class="section publications" id="publications">
   <div class="container">
     <div class="section-header">
-      <div><h2 id="publications-title">Selected publications</h2></div>
-      <a class="more" href="/publications/">All publications ↗</a>
+      <div><h2 id="publications-title">Recent publications</h2></div>
+      <a class="more" href="/publications/">All publications</a>
     </div>
-    <ol class="pub-list">
-      {homepagePublications.map((publication) => {
-        const publicationUrl = getPublicationUrl(publication);
-        const authors = formatAuthors(publication.authors);
-
-        return (
-        <li>
-          <span class="pub-meta">{publication.venue}<br />{publication.year}</span>
-          <div>
-            {publicationUrl ? (
-              <a href={publicationUrl} rel="noopener noreferrer" target="_blank"><h3>{publication.title}</h3></a>
-            ) : <h3>{publication.title}</h3>}
-            <p>{authors}{publication.award ? ` · ${publication.award}` : ""}</p>
-          </div>
-          <span aria-hidden="true" class="pub-arrow">↗</span>
-        </li>
-        );
-      })}
-    </ol>
+    <PubList publications={homepagePublications} />
   </div>
 </section>

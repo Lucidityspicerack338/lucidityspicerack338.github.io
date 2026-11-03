@@ -17,5 +17,7 @@
   "featured": false,
   "award": null,
   "displayOrder": 62,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": []
 }

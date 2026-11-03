@@ -1,17 +1,47 @@
 {
   "title": "Health AI and sensitive data",
-  "description": "Studies of consumer health AI and sensitive health information examine how people understand system advice, data practices, and the limits of available protections.",
+  "description": "Studies of how people understand advice from consumer health AI, how their sensitive health data is handled, and the limits of available protections.",
   "researchThemes": [
     "Health AI",
     "Privacy"
   ],
-  "relatedPublications": [],
-  "people": [],
+  "relatedPublications": [
+    "self-diagnosis-through-ai-enabled-chatbot-2020",
+    "medical-authority-ai-study-ai-enabled-2021",
+    "exploring-promoting-diagnostic-transparency-explainability-online-2021",
+    "user-experience-symptom-checkers-systematic-review-2022",
+    "beyond-self-diagnosis-chatbot-based-symptom-2023",
+    "collective-privacy-sensemaking-social-media-about-2024",
+    "discourse-analysis-period-fertility-tracking-app-2024",
+    "customizing-emotional-support-do-individuals-construct-2025",
+    "examining-people-prompt-gpt-seeking-mental-2025",
+    "understanding-users-perception-personally-identifiable-information-2025",
+    "usable-anonymity-reproductive-health",
+    "surveillance-as-care",
+    "privacy-control-conversational-llm-platforms-walkthrough-2026"
+  ],
+  "people": [
+    "xinning-gui",
+    "yubo-kou",
+    "lindy-hernandez",
+    "qiurong-song",
+    "zinan-zhang",
+    "yunhan-liu",
+    "yue-you",
+    "renkai-ma"
+  ],
   "funding": null,
   "status": "current",
   "label": "Health AI / Privacy",
   "displayNumber": "01",
   "displayOrder": 0,
   "featured": true,
-  "visibility": "public"
+  "visibility": "public",
+  "researchArea": "health",
+  "years": null,
+  "longDescription": [
+    "People turn to symptom checkers, conversational AI, and health tracking apps for health information and support. This line of work examines how people understand and use these tools’ advice, how they navigate the data practices behind them, and what protections are available for sensitive health information such as reproductive health data.",
+    "Related work was supported by Penn State College of IST seed grants on users’ explanations of AI-powered symptom checkers (2020–2021) and on period and fertility tracking after Roe v. Wade (2023–2024)."
+  ],
+  "leadership": null
 }

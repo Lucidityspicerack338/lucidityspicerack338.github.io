@@ -107,3 +107,25 @@ export function getNewsSourceLinks(item: {
 
   return [...primary, ...item.additionalSources];
 }
+
+type PublicationRecord = Awaited<ReturnType<typeof getPublications>>[number];
+
+/** Newest papers first (the publication files are ordered newest year first via displayOrder). */
+export function recentPapers(publications: PublicationRecord[], limit?: number) {
+  const papers = publications.filter((publication) => publication.type === "paper");
+  return limit ? papers.slice(0, limit) : papers;
+}
+
+export function publicationsInArea(publications: PublicationRecord[], areaId: string) {
+  return publications.filter((publication) => publication.researchAreas.some((area) => area.id === areaId));
+}
+
+export function awardedPublications(publications: PublicationRecord[]) {
+  return publications.filter((publication) => publication.award);
+}
+
+/** The single area a paper is listed under on the Research page (youth, then health, then play), so papers are not repeated across areas. */
+export function primaryArea(publication: PublicationRecord) {
+  const ids = publication.researchAreas.map((area) => area.id);
+  return ["youth", "health", "play"].find((id) => ids.includes(id)) ?? null;
+}

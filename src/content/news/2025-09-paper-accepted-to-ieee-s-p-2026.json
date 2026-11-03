@@ -2,13 +2,13 @@
   "date": "2025-09",
   "displayDate": "September 2025 · Acceptance",
   "title": "Paper accepted to IEEE S&P 2026",
-  "summary": "The lab announced the acceptance of Usable Anonymity in Reproductive Health Privacy to the 47th IEEE Symposium on Security and Privacy.",
+  "summary": "Our paper on the usability of anonymity features in period and fertility tracking apps was accepted to the 47th IEEE Symposium on Security and Privacy.",
   "sourceUrl": "https://doi.org/10.1109/SP63933.2026.00023",
   "sourceLabel": "DOI record",
   "additionalSources": [],
   "category": "acceptance",
   "details": [
-    "Qiurong Song, Yanlai Wu, Rie Helene (Lindy) Hernandez, Yao Li, Yubo Kou, and Xinning Gui"
+    "Usable Anonymity in Reproductive Health Privacy — Qiurong Song, Yanlai Wu, Rie Helene (Lindy) Hernandez, Yao Li, Yubo Kou, and Xinning Gui"
   ],
   "featured": false,
   "displayOrder": 10,

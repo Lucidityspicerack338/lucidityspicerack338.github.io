@@ -8,21 +8,33 @@
   const search = form.querySelector('[name="query"]');
   const year = form.querySelector('[name="year"]');
   const venue = form.querySelector('[name="venue"]');
-  const topic = form.querySelector('[name="topic"]');
+  const area = form.querySelector('[name="area"]');
+
+  // Lowercase, drop accents, and treat curly quotes and dashes like plain ones, so "Gui" or "children's" always match.
+  const normalize = (text) =>
+    text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[\u2018\u2019\u201c\u201d"']/g, "")
+      .replace(/[\u2010-\u2015-]/g, " ");
+  records.forEach((record) => {
+    record.dataset.searchNorm = normalize(record.dataset.search || "");
+  });
 
   const applyFilters = () => {
-    const query = search.value.trim().toLowerCase();
+    const words = normalize(search.value).split(/\s+/).filter(Boolean);
     const selectedYear = year.value;
     const selectedVenue = venue.value.toLowerCase();
-    const selectedTopic = topic.value.toLowerCase();
+    const selectedArea = area ? area.value : "";
     let visible = 0;
 
     records.forEach((record) => {
       const matches =
-        (!query || record.dataset.search.includes(query)) &&
+        words.every((word) => record.dataset.searchNorm.includes(word)) &&
         (!selectedYear || record.dataset.year === selectedYear) &&
         (!selectedVenue || record.dataset.venue === selectedVenue) &&
-        (!selectedTopic || record.dataset.topics.split(" ").includes(selectedTopic));
+        (!selectedArea || (record.dataset.areas || "").split(" ").includes(selectedArea));
       record.hidden = !matches;
       if (matches) visible += 1;
     });
@@ -35,4 +47,11 @@
   form.addEventListener("change", applyFilters);
   form.addEventListener("reset", () => requestAnimationFrame(applyFilters));
   form.addEventListener("submit", (event) => event.preventDefault());
+
+  // Links such as /publications/?area=health open the page already filtered.
+  const params = new URLSearchParams(window.location.search);
+  if (area && params.get("area") && [...area.options].some((option) => option.value === params.get("area"))) {
+    area.value = params.get("area");
+    applyFilters();
+  }
 })();

@@ -4,7 +4,9 @@
   "studentStatus": "current",
   "startYear": null,
   "cohortYear": 2022,
-  "researchInterests": [],
+  "researchInterests": [
+    "Privacy and security risks of everyday technologies for at-risk users, such as people using period and fertility tracking apps, children, and content creators."
+  ],
   "photo": "/images/people/qiurong-song.jpg",
   "personalWebsite": "https://qiurongsong.github.io/",
   "alumniDestination": null,

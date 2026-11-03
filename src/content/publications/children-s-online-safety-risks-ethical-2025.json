@@ -20,5 +20,10 @@
   "featured": false,
   "award": null,
   "displayOrder": 24,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "other",
+  "researchAreas": [
+    "play",
+    "youth"
+  ]
 }

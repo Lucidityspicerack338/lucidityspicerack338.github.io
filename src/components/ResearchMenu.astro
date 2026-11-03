@@ -11,19 +11,20 @@ const researchAreas = await getResearchAreas();
     </div>
     <div class="menu-body">
       <p class="menu-eyebrow">Select an area</p>
+      <p class="menu-hint">Choose a research area to see its projects and papers.</p>
       <nav aria-label="Research topics" class="research-options">
         {researchAreas.map((area) => (
-          <a href={`#${area.id}`}>
+          <a href={`/research/#${area.id}`}>
             <span aria-hidden="true" class={`theme-tile ${area.marker}`}></span>
             <span><strong>{area.menuTitle}</strong><small>{area.menuSummary}</small></span>
-            <span aria-hidden="true" class="menu-arr">↗</span>
+            
           </a>
         ))}
       </nav>
     </div>
-    <a aria-label="Press start: read about our research" class="press-start" href="#research">
+    <a aria-label="Press start: view all of our research" class="press-start" href="/research/">
       <span aria-hidden="true" class="press-icon">▶</span><span>PRESS START</span>
-      <span aria-hidden="true" class="press-caption">EXPLORE RESEARCH &nbsp;↗</span>
+      <span aria-hidden="true" class="press-caption">VIEW ALL RESEARCH</span>
     </a>
   </div>
 </aside>

@@ -21,5 +21,10 @@
   "featured": false,
   "award": "Best Paper Honorable Mention",
   "displayOrder": 22,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "play",
+    "youth"
+  ]
 }

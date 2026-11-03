@@ -24,5 +24,10 @@
   "featured": false,
   "award": null,
   "displayOrder": 9,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "play",
+    "youth"
+  ]
 }

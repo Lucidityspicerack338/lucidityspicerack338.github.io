@@ -3,23 +3,60 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SimpleHeader from "../components/SimpleHeader.astro";
 import SimpleFooter from "../components/SimpleFooter.astro";
 import InteriorHero from "../components/InteriorHero.astro";
-import ResearchSection from "../components/ResearchSection.astro";
-import ProjectSection from "../components/ProjectSection.astro";
-import { getSiteSettings } from "../lib/content";
+import PubList from "../components/PubList.astro";
+import { getProjects, getPublications, getResearchAreas, getSiteSettings, primaryArea, publicationsInArea, recentPapers } from "../lib/content";
 
 const siteSettings = await getSiteSettings();
+const areas = await getResearchAreas();
+const projects = await getProjects();
+const publications = await getPublications();
 ---
 
-<BaseLayout title={`Research and Projects — ${siteSettings.labName}`} bodyClass="v8-page interior-page">
+<BaseLayout title={`Research — ${siteSettings.labName}`} bodyClass="v8-page interior-page research-page">
   <SimpleHeader current="research" />
   <main id="main">
     <InteriorHero
-      eyebrow="RESEARCH"
-      title="Research and projects"
+      title="Research"
       intro="Our research brings together work on health technologies, digital play, and the experiences of people who use them. The three areas below reflect related lines of inquiry across the lab."
     />
-    <ResearchSection heading="Research areas" showIntro={false} />
-    <ProjectSection showMoreLink={false} />
+    <nav class="area-jump page-shell" aria-label="Research areas">
+      {areas.map((area) => <a href={`#${area.id}`}><span aria-hidden="true">{area.displayNumber}</span> {area.title}</a>)}
+    </nav>
+    {areas.map((area) => {
+      const areaProjects = projects.filter((project) => project.researchArea.id === area.id);
+      const areaPapers = recentPapers(publicationsInArea(publications, area.id));
+      return (
+        <section class="area-section" id={area.id} aria-labelledby={`${area.id}-title`}>
+          <div class="container">
+            <div class="area-head">
+              <span aria-hidden="true" class="strand-index">{area.displayNumber}</span>
+              <div><h2 id={`${area.id}-title`}>{area.title}</h2><p class="strand-topics">{area.topics}</p></div>
+              <p class="area-desc">{area.description}</p>
+            </div>
+            {areaProjects.length > 0 && (
+              <div class="area-block">
+                <h3 class="area-sub">Projects</h3>
+                <div class="area-projects">
+                  {areaProjects.map((project) => (
+                    <a class={`work tone-${project.displayNumber}`} href={`/research/${project.id}/`}>
+                      <div class="work-label"><span>{project.label}</span><span class="work-no">{project.years ?? ""}</span></div>
+                      <div class="work-content"><h4>{project.title}</h4><p>{project.description}</p><span class="work-more">Project details</span></div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div class="area-block">
+              <div class="area-sub-row">
+                <h3 class="area-sub">Recent papers</h3>
+                <a class="more" href={`/publications/?area=${area.id}`}>All {areaPapers.length} papers in this area</a>
+              </div>
+              <PubList publications={areaPapers.filter((publication) => primaryArea(publication) === area.id).slice(0, 4)} headingLevel="h4" />
+            </div>
+          </div>
+        </section>
+      );
+    })}
   </main>
   <SimpleFooter backLink />
 </BaseLayout>

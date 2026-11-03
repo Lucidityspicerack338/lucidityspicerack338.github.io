@@ -5,19 +5,37 @@
     "Youth",
     "Wellbeing"
   ],
-  "relatedPublications": [],
-  "people": [],
+  "relatedPublications": [
+    "teenagers-gambling-reddit",
+    "twitch-gamblification",
+    "child-safety-monetization-moderation-roblox-2025",
+    "trading-as-gambling-social-investing-financial-2024"
+  ],
+  "people": [
+    "xinning-gui",
+    "yubo-kou",
+    "lindy-hernandez",
+    "qiurong-song",
+    "yunhan-liu",
+    "elena-koung"
+  ],
   "funding": {
-    "funder": "Penn State IST",
-    "program": "Seed-funded project",
+    "funder": "Penn State College of Information Sciences and Technology",
+    "program": "Seed Grant Program: Risk Exposure and Harm Reduction in Children’s Online Gambling",
     "awardNumber": null,
     "amountUsd": null,
-    "sourceUrl": null
+    "sourceUrl": "https://www.psu.edu/news/information-sciences-and-technology/story/college-ist-awards-seed-grants-five-research-projects"
   },
   "status": "current",
   "label": "Youth / Wellbeing",
   "displayNumber": "04",
   "displayOrder": 3,
   "featured": true,
-  "visibility": "public"
+  "visibility": "public",
+  "researchArea": "youth",
+  "years": "2026–2027",
+  "longDescription": [
+    "Building on the lab’s studies of teenagers’ gambling discussions on Reddit, gamblification on Twitch, and gambling-like design on Roblox, this Penn State College of IST seed-funded project examines children’s exposure to online gambling and related risks, and how harm can be reduced."
+  ],
+  "leadership": "PIs: Xinning Gui and Yubo Kou."
 }

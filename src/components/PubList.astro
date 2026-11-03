@@ -1,0 +1,38 @@
+---
+import { formatAuthors, getPublicationUrl } from "../lib/content";
+
+interface Props {
+  publications: Array<{
+    id: string;
+    title: string;
+    authors: string[];
+    year: number;
+    venue: string;
+    award: string | null;
+    doi: string | null;
+    externalUrl: string | null;
+    pdfUrl: string | null;
+  }>;
+  headingLevel?: "h3" | "h4";
+}
+const { publications, headingLevel = "h3" } = Astro.props;
+const Heading = headingLevel;
+---
+
+<ol class="pub-list">
+  {publications.map((publication) => {
+    const publicationUrl = getPublicationUrl(publication);
+    return (
+      <li>
+        <span class="pub-meta">{publication.venue}<br />{publication.year}</span>
+        <div>
+          {publicationUrl ? (
+            <a href={publicationUrl} rel="noopener noreferrer" target="_blank"><Heading>{publication.title}</Heading></a>
+          ) : <Heading>{publication.title}</Heading>}
+          <p>{formatAuthors(publication.authors)}</p>
+          {publication.award && <p class="pub-award">★ {publication.award}</p>}
+        </div>
+      </li>
+    );
+  })}
+</ol>

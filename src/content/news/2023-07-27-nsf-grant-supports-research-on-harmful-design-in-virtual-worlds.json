@@ -1,11 +1,16 @@
 {
   "date": "2023-07-27",
   "displayDate": "July 27, 2023 · Grant",
-  "title": "NSF grant supports research on harmful design in virtual worlds",
-  "summary": "The National Science Foundation awarded $598,705 for Investigating and Mitigating Harmful Design in User-Generated Virtual World through Design Moderation.",
+  "title": "NSF grant for research on harmful design in virtual worlds",
+  "summary": "The National Science Foundation awarded $598,705 to the project “Investigating and Mitigating Harmful Design in User-Generated Virtual World through Design Moderation” (PI: Yubo Kou; Co-PIs: Xinning Gui and Sunhye Bai).",
   "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2326505",
   "sourceLabel": "NSF award 2326505",
-  "additionalSources": [],
+  "additionalSources": [
+    {
+      "label": "Project page",
+      "url": "https://healthandplaylab.github.io/research/harmful-design-virtual-worlds/"
+    }
+  ],
   "category": "grant",
   "details": [],
   "featured": false,

@@ -5,11 +5,33 @@
     "Games",
     "Design"
   ],
-  "relatedPublications": [],
-  "people": [],
+  "relatedPublications": [
+    "harmful-design-metaverse-mitigate-it-case-2023",
+    "harmful-design-user-generated-games-ethical-2024",
+    "ecology-harmful-design-risk-safety-game-2024",
+    "understanding-mitigating-harmful-design-user-generated-2024",
+    "child-safety-monetization-moderation-roblox-2025",
+    "dangerous-playgrounds-child-players-encounters-design-2025",
+    "more-than-just-microtransactions-predatory-monetization-2025",
+    "predatory-monetization-designs-manifest-child-friendly-2025",
+    "children-s-online-safety-risks-ethical-2025",
+    "player-safety-by-design",
+    "children-assess-digital-safety-risk-gaming-2026",
+    "digital-risks-coping-practices-among-roblox-2026",
+    "surfacing-risky-game-design-multistakeholder-taxonomy-2026"
+  ],
+  "people": [
+    "xinning-gui",
+    "yubo-kou",
+    "lindy-hernandez",
+    "qiurong-song",
+    "zinan-zhang",
+    "yunhan-liu",
+    "elena-koung"
+  ],
   "funding": {
     "funder": "National Science Foundation",
-    "program": null,
+    "program": "SaTC: CORE: Small: Investigating and Mitigating Harmful Design in User-Generated Virtual World through Design Moderation",
     "awardNumber": "2326505",
     "amountUsd": 598705,
     "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2326505"
@@ -19,5 +41,12 @@
   "displayNumber": "03",
   "displayOrder": 2,
   "featured": true,
-  "visibility": "public"
+  "visibility": "public",
+  "researchArea": "play",
+  "years": "2023–2027",
+  "longDescription": [
+    "User-generated virtual worlds such as Roblox let players, many of them children, both play games and build them. This NSF-funded project studies how harmful design emerges in these worlds, from predatory monetization and gambling-like mechanics to designs that expose young players to safety risks, and how design moderation by platforms and creators can mitigate it.",
+    "The project combines studies of players, children, and game creators, including co-design sessions with children, to inform safer design practices and platform governance."
+  ],
+  "leadership": "PI: Yubo Kou. Co-PIs: Xinning Gui and Sunhye Bai."
 }

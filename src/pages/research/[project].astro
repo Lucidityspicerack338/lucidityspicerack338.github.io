@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SimpleHeader from "../../components/SimpleHeader.astro";
+import SimpleFooter from "../../components/SimpleFooter.astro";
+import InteriorHero from "../../components/InteriorHero.astro";
+import PubList from "../../components/PubList.astro";
+import { getPeople, getProjects, getPublications, getResearchAreas, getSiteSettings } from "../../lib/content";
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project) => ({ params: { project: project.id } }));
+}
+
+const { project: projectId } = Astro.params;
+const siteSettings = await getSiteSettings();
+const project = (await getProjects()).find((candidate) => candidate.id === projectId)!;
+const area = (await getResearchAreas()).find((candidate) => candidate.id === project.researchArea.id)!;
+const publications = await getPublications();
+const projectPapers = publications.filter((publication) => project.relatedPublications.some((ref) => ref.id === publication.id));
+const people = await getPeople();
+const members = project.people.map((ref) => people.find((person) => person.id === ref.id)).filter((person) => person !== undefined);
+const statusLabel = { planned: "Planned", current: "Ongoing", completed: "Completed", "on-hold": "On hold" }[project.status];
+const amount = project.funding?.amountUsd ? `$${project.funding.amountUsd.toLocaleString("en-US")}` : null;
+---
+
+<BaseLayout title={`${project.title} — ${siteSettings.labName}`} description={project.description} bodyClass="v8-page interior-page project-page">
+  <SimpleHeader current="research" />
+  <main id="main">
+    <InteriorHero title={project.title} intro={project.description} />
+    <section class="project-body page-shell" aria-label="Project details">
+      <a class="project-back" href={`/research/#${area.id}`}>← {area.title}</a>
+      <div class="project-grid">
+        <dl class="project-facts">
+          <div><dt>Research area</dt><dd><a href={`/research/#${area.id}`}>{area.title}</a></dd></div>
+          {project.years && <div><dt>Years</dt><dd>{project.years}</dd></div>}
+          <div><dt>Status</dt><dd>{statusLabel}</dd></div>
+          {project.funding && (
+            <div>
+              <dt>Funding</dt>
+              <dd>
+                {project.funding.funder}{project.funding.awardNumber ? ` #${project.funding.awardNumber}` : ""}{amount ? ` · ${amount}` : ""}
+                {project.funding.program && <span class="project-program">{project.funding.program}</span>}
+                {project.funding.sourceUrl && <a class="project-source" href={project.funding.sourceUrl} rel="noopener noreferrer" target="_blank">Award record</a>}
+              </dd>
+            </div>
+          )}
+          {project.leadership && <div><dt>Leadership</dt><dd>{project.leadership}</dd></div>}
+        </dl>
+        <div class="project-text">
+          {project.longDescription.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+
+      {members.length > 0 && (
+        <div class="project-block">
+          <h2>Lab members</h2>
+          <ul class="project-members">
+            {members.map((person) => (
+              <li>
+                {person.photo ? <img src={person.photo} alt="" width="64" height="64" loading="lazy" decoding="async" /> : <span aria-hidden="true">{person.initials}</span>}
+                <div><b>{person.personalWebsite ? <a href={person.personalWebsite} rel="noopener noreferrer" target="_blank">{person.name}</a> : person.name}</b><small>{person.studentStatus === "alumni" ? `Former ${person.role}` : person.role}</small></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {projectPapers.length > 0 && (
+        <div class="project-block">
+          <h2>Papers</h2>
+          <PubList publications={projectPapers} />
+        </div>
+      )}
+    </section>
+  </main>
+  <SimpleFooter backLink />
+</BaseLayout>

@@ -3,29 +3,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SimpleHeader from "../components/SimpleHeader.astro";
 import SimpleFooter from "../components/SimpleFooter.astro";
 import InteriorHero from "../components/InteriorHero.astro";
-import { formatAuthors, getPublicationUrl, getPublications, getSiteSettings } from "../lib/content";
+import PubList from "../components/PubList.astro";
+import { awardedPublications, formatAuthors, getPublicationUrl, getPublications, getResearchAreas, getSiteSettings } from "../lib/content";
 
 const publications = await getPublications();
 const siteSettings = await getSiteSettings();
 const years = [...new Set(publications.map((publication) => publication.year))].sort((a, b) => b - a);
 const venues = [...new Set(publications.map((publication) => publication.venue))].sort();
-const topics = [...new Set(publications.flatMap((publication) => publication.researchThemes))].sort();
+const areas = await getResearchAreas();
+const awards = awardedPublications(publications);
 ---
 
 <BaseLayout title={`Publications — ${siteSettings.labName}`} bodyClass="v8-page interior-page publications-page">
   <SimpleHeader current="publications" />
   <main id="main">
     <InteriorHero
-      eyebrow="PUBLICATIONS"
       title="Publications"
-      intro="Research by lab members on health technologies, digital play, online communities, privacy, safety, and governance."
     />
+    {awards.length > 0 && (
+      <section class="awards-section" aria-labelledby="awards-title">
+        <div class="page-shell">
+          <h2 id="awards-title">Paper awards</h2>
+          <PubList publications={awards} />
+        </div>
+      </section>
+    )}
     <section class="archive-section" aria-labelledby="publication-list-title">
       <div class="page-shell">
         <form class="publication-filters" id="publication-filters" role="search">
           <div class="filter-field filter-search">
             <label for="publication-search">Search publications</label>
-            <input id="publication-search" type="search" name="query" placeholder="Title, author, or topic" autocomplete="off" />
+            <input id="publication-search" type="search" name="query" placeholder="Title, author, venue, or year" autocomplete="off" />
           </div>
           <div class="filter-field">
             <label for="publication-year">Year</label>
@@ -36,13 +44,13 @@ const topics = [...new Set(publications.flatMap((publication) => publication.res
             <select id="publication-venue" name="venue"><option value="">All venues</option>{venues.map((venue) => <option value={venue}>{venue}</option>)}</select>
           </div>
           <div class="filter-field">
-            <label for="publication-topic">Topic</label>
-            <select id="publication-topic" name="topic"><option value="">All topics</option>{topics.map((topic) => <option value={topic}>{topic}</option>)}</select>
+            <label for="publication-area">Research area</label>
+            <select id="publication-area" name="area"><option value="">All areas</option>{areas.map((area) => <option value={area.id}>{area.menuTitle}</option>)}</select>
           </div>
           <button class="filter-reset" type="reset">Reset</button>
         </form>
         <div class="archive-heading">
-          <h2 id="publication-list-title">Publication index</h2>
+          <h2 id="publication-list-title" class="visually-hidden">All publications</h2>
           <p id="publication-count" role="status" aria-live="polite">{publications.length} publications</p>
         </div>
         <ol class="publication-index" id="publication-index">
@@ -55,24 +63,23 @@ const topics = [...new Set(publications.flatMap((publication) => publication.res
               class="publication-record"
               data-year={publication.year}
               data-venue={publication.venue.toLowerCase()}
-              data-topics={publication.researchThemes.join(" ").toLowerCase()}
-              data-search={`${publication.title} ${authors} ${publication.venue} ${publication.researchThemes.join(" ")}`.toLowerCase()}
+              data-areas={publication.researchAreas.map((area) => area.id).join(" ")}
+              data-search={`${publication.title} ${authors} ${publication.venue} ${publication.year} ${publication.award ?? ""}`.toLowerCase()}
             >
               <div class="publication-date"><strong>{publication.venue}</strong><span>{publication.month} {publication.year}</span></div>
               <div class="publication-copy">
                 <h3>
                   {publicationUrl ? (
-                    <a href={publicationUrl} rel="noopener noreferrer" target="_blank">{publication.title} ↗</a>
+                    <a href={publicationUrl} rel="noopener noreferrer" target="_blank">{publication.title}</a>
                   ) : publication.title}
                 </h3>
                 <p>{authors}{publication.award ? ` · ${publication.award}` : ""}</p>
-                <ul class="topic-list" aria-label="Topics">{publication.researchThemes.map((topic) => <li>{topic}</li>)}</ul>
               </div>
             </li>
             );
           })}
         </ol>
-        <p class="filter-empty" id="publication-empty" hidden>No publications match those filters.</p>
+        <p class="filter-empty" id="publication-empty" hidden>No publications match those filters. <button class="filter-clear" type="reset" form="publication-filters">Clear all filters</button></p>
       </div>
     </section>
   </main>

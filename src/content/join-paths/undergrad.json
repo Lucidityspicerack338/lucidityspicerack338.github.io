@@ -1,11 +1,12 @@
 {
   "label": "Undergraduate RA",
   "heading": "Undergraduate research",
-  "intro": "We welcome undergraduates who are curious about research. Roles depend on active projects, mentoring capacity, and funding, so we can't guarantee an opening, but we're happy to hear from you.",
+  "intro": "Undergraduate research positions depend on our current projects, mentoring capacity, and funding, so openings are not guaranteed. If you are interested, email either co-director and include:",
   "steps": [
-    "Explore our current work and find an area that interests you.",
-    "Share any research, design, programming, or social-science experience you have.",
-    "Let us know roughly when and how much time you could contribute."
+    "Which of our research areas or projects interests you, and why.",
+    "Relevant experience, such as coursework, research, design, programming, or social science methods.",
+    "Whether you are looking for a funded research assistant position or a volunteer role.",
+    "How many hours per week you can contribute, and in which semesters."
   ],
   "note": null,
   "displayOrder": 2,

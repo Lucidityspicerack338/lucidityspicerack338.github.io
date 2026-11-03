@@ -4,7 +4,9 @@
   "studentStatus": "current",
   "startYear": null,
   "cohortYear": 2024,
-  "researchInterests": [],
+  "researchInterests": [
+    "Online communities and digital safety, with recent work on players’ experiences in competitive gaming."
+  ],
   "photo": "/images/people/elena-koung.jpg",
   "personalWebsite": "https://sites.psu.edu/elenakoung/",
   "alumniDestination": null,

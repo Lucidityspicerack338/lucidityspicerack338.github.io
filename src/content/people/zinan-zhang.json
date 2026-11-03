@@ -4,7 +4,9 @@
   "studentStatus": "current",
   "startYear": null,
   "cohortYear": 2022,
-  "researchInterests": [],
+  "researchInterests": [
+    "How design decisions in games and platforms create safety risks for players, especially children, and co-designing safer play spaces with them."
+  ],
   "photo": "/images/people/zinan-zhang.jpg",
   "personalWebsite": "https://www.zzinan.com/",
   "alumniDestination": null,

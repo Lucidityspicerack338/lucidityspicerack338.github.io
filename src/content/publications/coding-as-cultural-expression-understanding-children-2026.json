@@ -22,5 +22,9 @@
   "featured": false,
   "award": null,
   "displayOrder": 11,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "other",
+  "researchAreas": [
+    "youth"
+  ]
 }

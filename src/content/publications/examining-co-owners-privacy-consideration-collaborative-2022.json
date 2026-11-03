@@ -17,5 +17,9 @@
   "featured": false,
   "award": null,
   "displayOrder": 58,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "health"
+  ]
 }

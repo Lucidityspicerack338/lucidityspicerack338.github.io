@@ -4,7 +4,9 @@
   "studentStatus": "current",
   "startYear": null,
   "cohortYear": 2022,
-  "researchInterests": [],
+  "researchInterests": [
+    "Gig workers’ self-tracking practices and how to design for them."
+  ],
   "photo": "/images/people/lindy-hernandez.jpg",
   "personalWebsite": null,
   "alumniDestination": null,

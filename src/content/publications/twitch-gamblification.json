@@ -8,7 +8,7 @@
     "Xinning Gui"
   ],
   "year": 2026,
-  "month": "November",
+  "month": null,
   "venue": "CHI PLAY",
   "doi": "10.1145/3831281",
   "pdfUrl": null,
@@ -22,5 +22,9 @@
   "featured": true,
   "award": null,
   "displayOrder": 3,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "play"
+  ]
 }

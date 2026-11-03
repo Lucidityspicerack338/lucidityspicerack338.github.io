@@ -17,10 +17,8 @@ const alumni = people.filter((person) => person.studentStatus === "alumni");
     <section class="people-roster-block" aria-labelledby="co-directors-title">
       <div class="people-group-heading">
         <div>
-          <p>Lab leadership</p>
           <h2 id="co-directors-title">Co-directors</h2>
         </div>
-        <span>Joint leadership</span>
       </div>
       <div class="co-director-grid">
         {directors.map((person) => (
@@ -48,10 +46,8 @@ const alumni = people.filter((person) => person.studentStatus === "alumni");
     <section class="people-roster-block" aria-labelledby="phd-students-title">
       <div class="people-group-heading">
         <div>
-          <p>Current members</p>
           <h2 id="phd-students-title">Ph.D. students</h2>
         </div>
-        <span>Year indicates Ph.D. cohort</span>
       </div>
       <div class="student-directory-grid">
         {students.map((person) => (
@@ -64,11 +60,11 @@ const alumni = people.filter((person) => person.studentStatus === "alumni");
               )}
             </div>
             <div class="directory-copy">
-              <p class="directory-role">{person.role}{person.cohortYear ? ` · ${person.cohortYear} cohort` : ""}</p>
+              <p class="directory-role">{person.role}{person.cohortYear ? ` · since ${person.cohortYear}` : ""}</p>
               <h3>{person.name}</h3>
               {person.researchInterests.length > 0 && (
                 <div class="current-quest">
-                  <span>CURRENT QUEST</span>
+                  <span>RESEARCH FOCUS</span>
                   <p>{person.researchInterests.join(" · ")}</p>
                 </div>
               )}
@@ -84,7 +80,7 @@ const alumni = people.filter((person) => person.studentStatus === "alumni");
     {researchers.length > 0 && (
       <section class="people-roster-block" aria-labelledby="researchers-title">
         <div class="people-group-heading">
-          <div><p>Current members</p><h2 id="researchers-title">Other lab researchers</h2></div>
+          <div><h2 id="researchers-title">Other lab researchers</h2></div>
         </div>
         <div class="student-directory-grid">
           {researchers.map((person) => (
@@ -102,7 +98,7 @@ const alumni = people.filter((person) => person.studentStatus === "alumni");
     {alumni.length > 0 && (
       <section class="people-roster-block alumni-block" aria-labelledby="alumni-title">
         <div class="people-group-heading">
-          <div><p>Former members</p><h2 id="alumni-title">Alumni</h2></div>
+          <div><h2 id="alumni-title">Alumni</h2></div>
         </div>
         <ul class="alumni-list">
           {alumni.map((person) => (

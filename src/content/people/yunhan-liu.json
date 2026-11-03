@@ -4,8 +4,10 @@
   "studentStatus": "current",
   "startYear": null,
   "cohortYear": 2024,
-  "researchInterests": [],
-  "photo": null,
+  "researchInterests": [
+    "Gambling and simulated gambling risks in young people’s digital environments."
+  ],
+  "photo": "/images/people/yunhan-liu.jpg",
   "personalWebsite": null,
   "alumniDestination": null,
   "initials": "YL",

@@ -21,5 +21,9 @@
   "featured": true,
   "award": "Best Paper Honorable Mention",
   "displayOrder": 15,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "play"
+  ]
 }

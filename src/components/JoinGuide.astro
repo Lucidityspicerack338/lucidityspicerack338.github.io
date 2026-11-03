@@ -11,7 +11,7 @@ const joinPaths = await getJoinPaths();
       <button role="tab" id={`tab-${path.id}`} type="button" aria-controls={`panel-${path.id}`} aria-selected={index === 0 ? "true" : "false"} tabindex={index === 0 ? 0 : -1}>{path.label}</button>
     ))}
   </div>
-  {joinPaths.map((path, index) => (
+  {joinPaths.map((path) => (
     <section role="tabpanel" id={`panel-${path.id}`} aria-labelledby={`tab-${path.id}`} class="guide-panel" tabindex="0">
       <h3>{path.heading}</h3><p>{path.intro}</p><ol>{path.steps.map((step) => <li>{step}</li>)}</ol>
       {path.note && <p class="guide-note">{path.note}</p>}

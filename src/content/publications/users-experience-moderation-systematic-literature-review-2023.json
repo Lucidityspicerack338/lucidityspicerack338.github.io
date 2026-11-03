@@ -19,5 +19,9 @@
   "featured": false,
   "award": null,
   "displayOrder": 43,
-  "visibility": "public"
+  "visibility": "public",
+  "type": "paper",
+  "researchAreas": [
+    "play"
+  ]
 }

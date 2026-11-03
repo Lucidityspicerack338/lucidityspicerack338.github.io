@@ -2,14 +2,14 @@
 import { getNewsItems } from "../lib/content";
 
 const newsItems = await getNewsItems();
-const homepageNews = newsItems.filter((item) => item.featured);
+const homepageNews = newsItems.slice(0, 3);
 ---
 
 <section aria-labelledby="news-title" class="section news" id="news">
   <div class="container">
     <div class="section-header">
       <div><h2 id="news-title">News</h2></div>
-      <a class="more" href="/news/">News archive ↗</a>
+      <a class="more" href="/news/">All news</a>
     </div>
     <div class="news-row">
       {homepageNews.map((item) => (

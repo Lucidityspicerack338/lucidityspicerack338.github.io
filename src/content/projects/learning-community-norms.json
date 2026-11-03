@@ -5,11 +5,20 @@
     "Communities",
     "Governance"
   ],
-  "relatedPublications": [],
-  "people": [],
+  "relatedPublications": [
+    "community-begins-where-moderation-ends-peer-2024",
+    "why-creators-break-rules"
+  ],
+  "people": [
+    "xinning-gui",
+    "yubo-kou",
+    "lindy-hernandez",
+    "zinan-zhang",
+    "renkai-ma"
+  ],
   "funding": {
     "funder": "National Science Foundation",
-    "program": null,
+    "program": "SaTC: CORE: Small: Community-Based Support for Learning Community Norms",
     "awardNumber": "2334934",
     "amountUsd": 590840,
     "sourceUrl": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2334934"
@@ -19,5 +28,11 @@
   "displayNumber": "02",
   "displayOrder": 1,
   "featured": true,
-  "visibility": "public"
+  "visibility": "public",
+  "researchArea": "play",
+  "years": "2024–2027",
+  "longDescription": [
+    "This NSF-funded project studies how online communities can support people in learning their norms. It examines peer support for users after moderation and why people break community rules, to inform community-based approaches to norm learning."
+  ],
+  "leadership": "PI: Yubo Kou."
 }
