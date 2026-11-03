@@ -290,3 +290,5 @@ html{scroll-padding-top:120px}
 @media(max-width:750px){html{scroll-padding-top:150px}}
 .project-more{margin-top:18px;font-size:14px;font-weight:700}
 .project-more a{color:#006F70!important;border-bottom:1px solid #006F70}
+.awards-note{font-size:14px;color:#566A63;margin:-8px 0 18px}
+.awards-note a{color:#006F70!important;border-bottom:1px solid #006F70}
