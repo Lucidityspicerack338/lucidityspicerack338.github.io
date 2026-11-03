@@ -1,0 +1,10 @@
+---
+// The lab logo's visual language: health = filled square, play = outlined square, youth = both.
+interface Props {
+  marker: "filled" | "outline" | "combination";
+  size?: "small" | "large";
+}
+const { marker, size = "small" } = Astro.props;
+---
+
+<span aria-hidden="true" class={`theme-tile area-marker ${marker} ${size}`}></span>

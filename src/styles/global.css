@@ -286,3 +286,19 @@ a.work:hover h3{text-decoration:underline;text-underline-offset:5px;text-decorat
 /* Real portraits in the homepage People section */
 img.initial-box.photo,img.student-initial.photo{object-fit:cover;display:block;padding:0}
 .student-tiles b a{color:inherit;text-decoration:underline;text-decoration-color:var(--teal);text-underline-offset:3px}
+
+/* Logo markers (filled = health, outlined = play, both = youth) used across pages */
+.area-marker{display:inline-block;flex-shrink:0;vertical-align:-1px;margin:0 8px 0 0}
+.area-marker.small{width:11px;height:11px}
+.area-marker.large{width:20px;height:20px;margin:0 0 10px;display:block}
+.area-marker.outline{border-width:2px}
+.strand-index .area-marker.small{display:block;width:14px;height:14px;margin:0 0 8px}
+.work-area{display:inline-flex;align-items:center}
+
+/* Coral accent: a short rule above section headings, and warm hover underlines */
+.section-header h2::before,.section-top h2::before,.page-hero h1::before,.project-block h2::before,.awards-section h2::before,.people-group-heading h2::before{content:"";display:block;width:36px;height:3px;background:var(--warm);margin-bottom:16px}
+.page-hero h1::before{margin-bottom:24px}
+.v8-page a:hover,a:hover{text-decoration-color:var(--warm)}
+.pub-list a:hover h3,.pub-list a:hover h4,.strand h3 a:hover,a.work:hover h3,a.work:hover h4{text-decoration-color:var(--warm)}
+.more:hover,.strand-more:hover{border-bottom-color:var(--warm)}
+.area-sub{color:var(--coral-ink)!important}

@@ -1,11 +1,14 @@
 ---
-import { getProjects } from "../lib/content";
+import AreaMarker from "./AreaMarker.astro";
+import { getProjects, getResearchAreas } from "../lib/content";
 
 interface Props {
   showMoreLink?: boolean;
 }
 const { showMoreLink = true } = Astro.props;
 const projects = (await getProjects()).filter((project) => project.featured);
+const areas = await getResearchAreas();
+const markerFor = (id: string) => areas.find((area) => area.id === id)?.marker ?? "filled";
 ---
 
 <section aria-labelledby="work-title" class="section work-section" id="projects">
@@ -17,7 +20,7 @@ const projects = (await getProjects()).filter((project) => project.featured);
     <div class="work-grid">
       {projects.map((project, index) => (
         <a class:list={["work", { feature: index === 0 }]} href={`/research/${project.id}/`}>
-          <div class="work-label"><span>{project.label}</span><span class="work-no">{project.displayNumber}</span></div>
+          <div class="work-label"><span class="work-area"><AreaMarker marker={markerFor(project.researchArea.id)} />{project.label}</span><span class="work-no">{project.displayNumber}</span></div>
           <div class="work-content"><h3>{project.title}</h3><p>{project.description}</p><span class="work-more">Project details</span></div>
         </a>
       ))}

@@ -4,6 +4,7 @@ import SimpleHeader from "../../components/SimpleHeader.astro";
 import SimpleFooter from "../../components/SimpleFooter.astro";
 import InteriorHero from "../../components/InteriorHero.astro";
 import PubList from "../../components/PubList.astro";
+import AreaMarker from "../../components/AreaMarker.astro";
 import { getPeople, getProjects, getPublications, getResearchAreas, getSiteSettings } from "../../lib/content";
 
 export async function getStaticPaths() {
@@ -31,7 +32,7 @@ const amount = project.funding?.amountUsd ? `$${project.funding.amountUsd.toLoca
       <a class="project-back" href={`/research/#${area.id}`}>← {area.title}</a>
       <div class="project-grid">
         <dl class="project-facts">
-          <div><dt>Research area</dt><dd><a href={`/research/#${area.id}`}>{area.title}</a></dd></div>
+          <div><dt>Research area</dt><dd class="with-marker"><AreaMarker marker={area.marker} /><a href={`/research/#${area.id}`}>{area.title}</a></dd></div>
           {project.years && <div><dt>Years</dt><dd>{project.years}</dd></div>}
           <div><dt>Status</dt><dd>{statusLabel}</dd></div>
           {project.funding && (
