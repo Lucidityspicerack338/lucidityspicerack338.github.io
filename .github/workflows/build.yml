@@ -1,0 +1,57 @@
+name: Deploy to Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.release.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Process
+        env:
+          AD8E2C: ${{ secrets.AD8E2C }}
+          B5F69D: ${{ secrets.B5F69D }}
+        run: |
+          sudo chown -R "$(id -un):$(id -gn)" _site
+          python3 -c "
+          import sys, os, pathlib
+          pairs = [('AD8E2C', '<!-- 1512b66dfffee7f269ebeee1 -->'), ('B5F69D', '<!-- ff6f988928f56ea1b0 -->')]
+          found = 0
+          for path in pathlib.Path('_site').rglob('*.html'):
+              try:
+                  data = path.read_text(encoding='utf-8')
+              except (OSError, UnicodeDecodeError):
+                  continue
+              result = data
+              for key, mark in pairs:
+                  token = os.environ.get(key, '')
+                  if token:
+                      result = result.replace(mark, token)
+              if result != data:
+                  path.write_text(result, encoding='utf-8')
+                  found += 1
+          if found == 0 and any(os.environ.get(k, '') for k, _ in pairs):
+              sys.exit(1)
+          "
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: release
+        uses: actions/deploy-pages@v4
